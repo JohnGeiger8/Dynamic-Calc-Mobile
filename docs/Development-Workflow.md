@@ -115,6 +115,14 @@ Prefer a small amount of automation with manual verification:
 
 If a workflow cannot distinguish these cases, disable that rule and handle the transition manually. Do not assume automation is configured just because this document describes the desired behavior.
 
+### Initial configuration — October 27, 2026
+
+The Project is linked to the repository and currently private to its authorized users. Its Board view has Backlog, Ready, In progress, In review, and Done columns. Open issues from this repository are automatically added, and newly added items default to Backlog. Sub-issues are automatically added as well. Setting an issue to Done closes it automatically.
+
+Automatic status changes on issue closure, PR linking, and PR merging are disabled. Review, completion, and reopened-issue triage are manual for now. This avoids treating declined issues as delivered work or advancing a task simply because a PR was linked. Enable additional rules only after checking their behavior against this guide.
+
+The label taxonomy and milestone definitions in this guide are documented conventions; creating the full label catalog, milestones, issue forms, and development backlog is separate setup work. No implementation tasks are implied to be complete by the empty board.
+
 ## Design document conventions
 
 Keep product/UI designs, mechanics baseline plans, and architecture decisions in `docs/design/`. Use descriptive names such as `UI-Design.md` or `Emerald-Kaizo-Baseline.md` and list them in the design index. Each new design should include status, date, goal, scope, decisions, open questions, and validation expectations. Mark proposed behavior clearly; merge into the design only after the maintainer accepts it. Link implementation issues instead of duplicating their live status.
