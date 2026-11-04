@@ -191,3 +191,86 @@ A clean temporary Git clone on 2026-11-03 ran the three documented commands succ
 The baseline test suite checks all 26 input hashes (including empty, truncated and same-length corruption), missing files, HTTP failure, wrong retrieved content, output hashes, effective settings, critical multiplier, persisted-setting isolation, and CLI failure with stale-output removal. CI performs fetch, offline verify, tests, and working-tree checks from a fresh checkout.
 
 This captures the selected inputs; it does not perform issue #5's independent accuracy audit. The headless harness suppresses UI event wiring, automatic ability weather changes, persisted matchup restoration and calculation rendering. Explicit fixture battle inputs must account for those effects. Source mechanics evidence and a verified critical multiplier are not damage-roll, KO-description, doubles or AI parity fixtures. No ROM, patch, release hash, personal save, physical device, or game execution was used. Remote deletion could prevent fresh retrieval, though a complete verified cache can be reused offline. The inherited engine tests and browser tests concern the older fork and do not establish Decomps/EK parity; issue #4 remains responsible for comparison fixtures.
+
+## Fork/reference difference audit (issue #5)
+
+- **Audit date:** 2026-11-03
+- **Audit status:** Proposed findings for [issue #5](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/5) review
+- **Machine-readable inventory:** [`difference-inventory.json`](../../baselines/emerald-kaizo/difference-inventory.json)
+- **Verifier:** [`scripts/baseline/audit-emerald-kaizo.mjs`](../../scripts/baseline/audit-emerald-kaizo.mjs)
+
+### Reproducible procedure
+
+Clone the three repositories into any disposable directory, detach each checkout at the revision already pinned above, and run the audit verifier with the three paths:
+
+```sh
+git clone https://github.com/hzla/Dynamic-Calc.git /tmp/ek-audit-fork
+git -C /tmp/ek-audit-fork checkout 42b4cdc0f11de43ecabf3a5d2c1aba67e46e2f74
+git clone https://github.com/hzla/Dynamic-Calc-Decomps.git /tmp/ek-audit-reference
+git -C /tmp/ek-audit-reference checkout 883e9837e6281dd9d6963b935b6cda1dbe101293
+git clone https://github.com/anastarawneh/pokemon-damage-calc.git /tmp/ek-audit-trainers
+git -C /tmp/ek-audit-trainers checkout 15ae28de8310f6442f1302f1709b0bf792d1e131
+npm run baseline:audit -- \
+  --fork /tmp/ek-audit-fork \
+  --reference /tmp/ek-audit-reference \
+  --trainer-source /tmp/ek-audit-trainers
+```
+
+The verifier rejects the wrong commit or any changed locked file before reporting the inventory. The inventory locks 28 source files that support its findings, including both trainer representations, the source trainer file, configuration/loaders, calculation dispatch, Gen 3 mechanics, and result-description paths. It classifies every finding as `relevant`, `irrelevant-to-baseline`, or `requires-investigation`, and records likely effects, fixture candidates, evidence still needed, and minimum action.
+
+For broader orientation, sorted `rg --files calc js backups` lists contain 32 fork-only paths, 208 reference-only paths, and 83 common paths; 50 common files differ byte-for-byte. Those counts are not the conclusion: most additions serve other games, later mechanics, AI, save formats, or developer tooling. The inventory narrows the comparison to behavior that can affect the accepted EK target.
+
+### Findings and relevance
+
+| Area | Classification | Finding and likely effect |
+| --- | --- | --- |
+| Reference selection and settings | Relevant | The fork's local mapping names `backups/ek.js` and its user-facing selector redirects to Decomps. The reference resolves `data=ek` to `ek2.js` and independently selects a Gen 8 base data pool, Gen 3 damage/type/switch selectors, `critGen=5`, and no physical/special split. A single generation toggle cannot reproduce this configuration. |
+| Base data and loaders | Relevant | The reference overlays the EK snapshot on its pinned base species, move, item, ability, and type tables while retaining unspecified metadata. Its loader forces Return to 102 BP, Magnitude to 70 BP, retains the Solar-Beam alias, and preserves separate UI/engine move pools. Equivalent trainer text can therefore resolve to different calculation inputs in the fork. |
+| Trainer sets and order | Relevant, content already reconciled | The raw fork, reference, and source files differ in representation and identifiers, but issue #1's documented normalization matches all 1,744 sets with no missing or extra entry. Use the verified `ek2`-derived data and separate trainer order; no trainer-content port is recommended. |
+| Dispatch and explicit state | Relevant | Decomps dispatches with a separate mechanics generation and carries item activation and expanded field state through clones. The fork uses different globals/defaults. Hidden state can choose the wrong mechanics or discard a visible toggle unless the adapter supplies explicit configuration and battle state. |
+| Gen 3 core calculation | Relevant | Move category selection, attack/defense/final modifier staging, critical selection, item behavior, and floor order differ. These paths can change raw rolls for ordinary moves, boosts, burn, screens, held items, abilities, and critical hits. |
+| Move-specific hooks | Relevant | Brick Break, Pain Split, Triple Kick/per-hit power, multihit/stat drops, Beat Up, Pursuit, Weather Ball, starter abilities, Explosion/Self-Destruct, and critical handling differ. The accepted trainer data actually exercises many of these paths: 128 Brick Break, 92 Explosion, 23 Self-Destruct, 18 Weather Ball, 13 Pursuit, and 4 Pain Split entries. |
+| Type effectiveness and dual-type rounding | Requires investigation | The reference sorts defender types by a precedence list and floors each type multiplier separately; the fork combines effectiveness before a later application. Dual-type rounding can change HP rolls. Static code establishes disagreement, not game correctness. |
+| Raw results and KO descriptions | Relevant | Decomps changes multihit result shapes, range aggregation, recovery/recoil, residual effects, and knockout text. Issue #4 must capture raw rolls and exact descriptions separately so presentation normalization cannot hide a mechanics mismatch. |
+| Typed and generic Hidden Power | Requires investigation | The reference preserves typed EK move-table entries but can derive generic Hidden Power from IVs. The accepted sets contain 229 typed entries and 2 generic entries. Fixtures must prevent typed moves from being overwritten and must state IVs for generic cases. |
+| Doubles/spread behavior | Irrelevant to the initial baseline | The two paths differ, but no EK doubles/partner evidence was pinned. Keep doubles unsupported rather than importing unverified spread logic. |
+| Switch/AI/save hooks | Irrelevant to the initial baseline | Decomps has newer switch preview, AI, save reader, and trainer UI integrations, but EK exposes no verified AI or partner behavior. They are not evidence for ordinary Singles damage parity. |
+| Other Decomps growth | Irrelevant to the initial baseline | Reference-only later-generation, other-hack, AI, save, and developer modules explain much of the repository diff. Porting them would enlarge scope without establishing EK correctness. |
+
+The full locations and dispositions are in the machine-readable inventory. `Relevant` means a path can affect supported inputs or outputs, not that the Decomps implementation has been proven correct. `Requires investigation` is intentionally not resolved by choosing one calculator.
+
+### Candidate fixture set for issue #4
+
+Use complete inputs from the pinned output; the labels below identify candidates, not expected damage:
+
+| Concern | Candidate from the accepted trainer data |
+| --- | --- |
+| Screens and Brick Break | Leader Roxanne's level 14 Anorith |
+| Explosion defense handling | Team Magma Grunt #2 at Mt. Chimney's level 36 Camerupt |
+| Weather and category selection | Camper Beau's level 40 Choice Band Castform using Weather Ball |
+| Switching flag | Pokémon Ranger Jackson's level 45 Crawdaunt using Pursuit |
+| Status/non-damage behavior | Ruin Maniac Bryan's level 30 Duskull using Pain Split |
+| Ability and item modifier order | Guitarist Beth's level 47 Huge Power Azumarill using Return; add a low-HP Blaze, Torrent, Overgrow, or Swarm case |
+| Fixed loader overrides | Barboach from the Team Aqua Grunt at Rusturf Tunnel using Magnitude; the Azumarill Return case above |
+| Hidden Power | Parasol Lady Daphne's Ampharos using Hidden Power Water; Expert Edgar's Electabuzz and Psychic Brandi's Unown using generic Hidden Power with explicit IVs |
+| Multihit result shape | An accepted Double Kick set plus targeted per-hit/stat-change cases where the trainer data has no representative |
+| Criticals, boosts, screens, and current HP | Targeted cases around positive/negative stat stages, full/partial HP, exact KO boundaries, and Reflect/Light Screen |
+| Dual-type rounding | Targeted neutral, 2x, 4x, 0.5x, 0.25x, immunity, and Foresight cases at floor boundaries |
+
+Issue #4 must obtain results from the pinned reference and record uncertainty rather than fill expected values from this audit. Game correctness needs independent evidence wherever the fork and reference disagree. Doubles, spread, prediction, and AI cases remain excluded unless their support scope is separately accepted.
+
+### Minimum reconciliation scope
+
+1. Treat issue #2's verified data and effective configuration as adapter inputs; never fall back to the legacy local `ek.js`, a live default, or EK 1.1.
+2. Make mechanics generation, data generation, item activation, Pokémon values, and the complete Field/Side state explicit at the adapter boundary.
+3. Use issue #4 fixtures to measure raw rolls first, then knockout descriptions. Include the relevant and investigation candidates above in both attack directions where applicable.
+4. Port only the narrow Gen 3 loader, clone/dispatch, modifier, move-hook, and result behavior required by accepted fixtures. Keep attribution with any inherited code.
+5. When reference and fork disagree, retain a linked uncertain result until authoritative evidence supports a choice. Do not turn reference parity into a claim of game correctness.
+
+Do not replace the calculation engine wholesale. Do not import unrelated Decomps games, save readers, AI/prediction systems, later-generation mechanics, or doubles logic. This keeps the requested fork parent, limits license review, and gives each behavior change a reproducible reason.
+
+### Follow-up and remaining limits
+
+[Issue #4](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/4) is the next dependency: it must define the schema and capture the candidate reference cases above. [Issue #3](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/3) remains blocked until those fixtures exist; this audit does not create a comparison runner or invent expected results.
+
+No standalone mechanics bug is filed from static disagreement alone. If an issue #4 case demonstrates a mismatch or authoritative evidence resolves one of `EK-AUDIT-07`/`EK-AUDIT-09`, create one focused follow-up per independently verifiable behavior and link its full battle inputs and reference result. This audit used no ROM, patch, save, game execution, or calculation-output fixture and therefore makes no damage, KO, prediction, or game-accuracy claim.
