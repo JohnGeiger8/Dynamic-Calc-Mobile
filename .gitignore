@@ -2,3 +2,5 @@
 /cypress/downloads
 /cypress/screenshots
 /tools
+# Reproducibility inputs and derived data (not vendored)
+/.baseline-cache/

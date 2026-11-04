@@ -1,0 +1,200 @@
+{
+  "schemaVersion": 1,
+  "dataset": {
+    "id": "emerald-kaizo-original",
+    "label": "Emerald Kaizo (original/unversioned)",
+    "trainerSets": 1744,
+    "excluded": "Emerald Kaizo 1.1"
+  },
+  "retrievedOn": "2026-11-03",
+  "format": {
+    "inputs": "Unmodified upstream JavaScript and license text",
+    "output": "Canonical sorted JSON, UTF-8, two-space indent, LF, schemaVersion 1",
+    "automation": "Node.js >=22; scripts/baseline/emerald-kaizo.mjs"
+  },
+  "sources": {
+    "dynamicCalc": {
+      "repository": "hzla/Dynamic-Calc",
+      "revision": "42b4cdc0f11de43ecabf3a5d2c1aba67e46e2f74",
+      "role": "Fork ancestry; not substituted for selected Decomps inputs"
+    },
+    "reference": {
+      "repository": "hzla/Dynamic-Calc-Decomps",
+      "revision": "883e9837e6281dd9d6963b935b6cda1dbe101293",
+      "role": "Selected calculator, base pools, snapshot, loader, settings, and source evidence"
+    },
+    "trainerSource": {
+      "repository": "anastarawneh/pokemon-damage-calc",
+      "revision": "15ae28de8310f6442f1302f1709b0bf792d1e131",
+      "role": "Trainer lineage and root MIT license"
+    }
+  },
+  "files": [
+    {
+      "source": "reference",
+      "path": "backups/ek2.js",
+      "sha256": "93b0732ccd62c434f4dac95f47e9f1c83412efc4c95326c75dbfc28f722d99c0",
+      "bytes": 1003795
+    },
+    {
+      "source": "reference",
+      "path": "backups/trainer_orders/ek2.js",
+      "sha256": "3c3f80d149fa9bcdd8977ca779096b5d1e9a6e9eda0b1ef88616eab76bf39cea",
+      "bytes": 29108
+    },
+    {
+      "source": "reference",
+      "path": "backups/title_to_backup_mappings.js",
+      "sha256": "98e0cb1b5f6a26d676b7ee3de1e1e6cdf0282e943351c04ef3d10ba8f5c07ec7",
+      "bytes": 4435
+    },
+    {
+      "source": "reference",
+      "path": "calc/LICENSE",
+      "sha256": "d1078bfb6e02ab3b15fcc3cf36f8c53f6176d6e2c297069042a3cad52cd4e527",
+      "bytes": 1100
+    },
+    {
+      "source": "reference",
+      "path": "calc/util.js",
+      "sha256": "dd85717277001f19facca7cd7442c613a4300447ad200aa5ac9e02fa44321107",
+      "bytes": 3151
+    },
+    {
+      "source": "reference",
+      "path": "calc/stats.js",
+      "sha256": "da5fd732b5491aadf4a3899dadaba086345eba1e2d08c974115c8632fea7999d",
+      "bytes": 6827
+    },
+    {
+      "source": "reference",
+      "path": "calc/data/species.js",
+      "sha256": "3ffde0abdf45995d097dc4505b5acadec74d0f3be699d6272114dfeca9a913c3",
+      "bytes": 358659
+    },
+    {
+      "source": "reference",
+      "path": "calc/data/moves.js",
+      "sha256": "bd502278b2e4df66550e17604927852fb5574158a9cddea772b3e6f470613fb2",
+      "bytes": 160070
+    },
+    {
+      "source": "reference",
+      "path": "calc/data/items.js",
+      "sha256": "7fdd096535e8710cf94d72891e0c1df872f0f74a8f2ad166a74ed6b083668a84",
+      "bytes": 22757
+    },
+    {
+      "source": "reference",
+      "path": "calc/data/abilities.js",
+      "sha256": "7b04f954b50d38ae225f01afe368dd5815e0dc8bac6bbe910e80ee9bd106ff16",
+      "bytes": 11876
+    },
+    {
+      "source": "reference",
+      "path": "calc/data/types.js",
+      "sha256": "03f2022f31223b7f71c71bba2e5198765b41607efe650a249fd4828a3e96870b",
+      "bytes": 18285
+    },
+    {
+      "source": "reference",
+      "path": "calc/data/natures.js",
+      "sha256": "ec146dc7ef6f65fb861d1dfbea62b0b2af1be36bb6c8fcc715e06539cdda88cf",
+      "bytes": 4518
+    },
+    {
+      "source": "reference",
+      "path": "calc/field.js",
+      "sha256": "bbc43d49fab976da7de43e98fee18959e69506281348c2d1e44a831e04eb4f7c",
+      "bytes": 5190
+    },
+    {
+      "source": "reference",
+      "path": "calc/pokemon.js",
+      "sha256": "15a504711adac47fd61a273fe0db64e7519bf9c5110b8308452bbb2dc88c5b4a",
+      "bytes": 14056
+    },
+    {
+      "source": "reference",
+      "path": "calc/move.js",
+      "sha256": "4ac08117467415b94df1c8b829a9892181f40dc08bdadb1fd91c0e219a0567a9",
+      "bytes": 13929
+    },
+    {
+      "source": "reference",
+      "path": "calc/mechanics/gen3.js",
+      "sha256": "3b978905d6c7210abc00a7b6c7f6de817cd7d3a37ab9e522ce9778c829660469",
+      "bytes": 17697
+    },
+    {
+      "source": "reference",
+      "path": "calc/mechanics/util.js",
+      "sha256": "9c9bfdb644cbfd4dccaf808f3622ad3d0d0f0c87e86729a97d0e57b28fe07b7f",
+      "bytes": 36371
+    },
+    {
+      "source": "reference",
+      "path": "js/initialize.js",
+      "sha256": "2faf052c70c63522ddfdecc52cb84da32a01c96c8941aaba3ee6b4057c2f54b1",
+      "bytes": 81235
+    },
+    {
+      "source": "reference",
+      "path": "js/shared_controls.js",
+      "sha256": "4f954c574845f2aa1836337b68dc82aaac4b3e410531a32adb80d0ceffec5089",
+      "bytes": 132876
+    },
+    {
+      "source": "reference",
+      "path": "js/index_randoms_controls.js",
+      "sha256": "ea275c26317a0c7a7b4b961e0df2da32c986c68bf534bbbcb4397a8e01a6bcf1",
+      "bytes": 27823
+    },
+    {
+      "source": "reference",
+      "path": "js/calc_ui/menu_settings.js",
+      "sha256": "aaa5edd2d808bc279798d4cda654dace04341674a05d37a50a5022a3d062cd6e",
+      "bytes": 27601
+    },
+    {
+      "source": "reference",
+      "path": "js/calc_ui/utility_functions.js",
+      "sha256": "c272b7f17614df1abce9512c49129b71765e0a6c5238250f216cb00c93b9d385",
+      "bytes": 13756
+    },
+    {
+      "source": "reference",
+      "path": "js/calc_ui/switch_preview/g3.js",
+      "sha256": "545d28ebc584f9da7f49246811c13950013921b4b82d2c69f3256bb7e82c97b5",
+      "bytes": 24507
+    },
+    {
+      "source": "reference",
+      "path": "index.html",
+      "sha256": "b79937d8a3e93b39e18c43426612680d9845c6dc2e7ec31b7d127ee85c05a8af",
+      "bytes": 178716
+    },
+    {
+      "source": "trainerSource",
+      "path": "src/js/data/sets/hacks/gen3/ek.js",
+      "sha256": "98c70b8a60d4bc7ac3a8e9fe93c70df9c453157f384fa5c6f6c272d102ad387c",
+      "bytes": 325014
+    },
+    {
+      "source": "trainerSource",
+      "path": "LICENSE",
+      "sha256": "aec1853c8c2c681ed5494ef07533c2d245f0e8e222b4d4dcc85cc3c5bbdac2d4",
+      "bytes": 1100
+    }
+  ],
+  "outputs": {
+    "data.json": "52d39f69f360b82ca2d7d6fbd8205adc0f6dcd293f4e1239310ca8abd08752fa",
+    "effective-settings.json": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926"
+  },
+  "attribution": {
+    "reference": "hzla/Dynamic-Calc-Decomps contributors; calc/LICENSE (MIT, Honko and other contributors, 2013–2022); root/browser integration license not specified",
+    "trainerSource": "pokemon-damage-calc contributors; root LICENSE (MIT, Honko and other contributors, 2013–2024)",
+    "snapshotNotice": "Generated from pokemon-damage-calc EK trainer data. Do not edit by hand.",
+    "distribution": "Retrieval only; inputs and generated outputs ignored, unmodified notices retained in cache. No grant for unrelated assets inferred."
+  }
+}
