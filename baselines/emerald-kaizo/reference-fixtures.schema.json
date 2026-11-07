@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/blob/master/baselines/emerald-kaizo/reference-fixtures.schema.json",
+  "title": "Pinned Emerald Kaizo reference fixtures",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "dataset", "provenance", "conventions", "cases"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "dataset": { "const": "emerald-kaizo-original" },
+    "provenance": {
+      "type": "object",
+      "required": ["repository", "revision", "snapshot", "snapshotSha256", "dataSha256", "configurationSha256", "extraSourceSha256", "licenses"],
+      "properties": {
+        "repository": { "const": "hzla/Dynamic-Calc-Decomps" },
+        "revision": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "snapshot": { "const": "backups/ek2.js" },
+        "snapshotSha256": { "$ref": "#/$defs/sha256" },
+        "dataSha256": { "$ref": "#/$defs/sha256" },
+        "configurationSha256": { "$ref": "#/$defs/sha256" },
+        "extraSourceSha256": { "type": "object", "additionalProperties": { "$ref": "#/$defs/sha256" } },
+        "licenses": { "type": "array", "items": { "type": "string" }, "minItems": 2 }
+      }
+    },
+    "conventions": { "type": "object", "required": ["mechanicsGeneration", "dataGeneration", "movePickerGeneration", "damageUnit", "percentDenominator", "percentRounding", "status", "koText"] },
+    "cases": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/case" } }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "statBlock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hp", "atk", "def", "spa", "spd", "spe"],
+      "properties": { "hp": { "type": "integer" }, "atk": { "type": "integer" }, "def": { "type": "integer" }, "spa": { "type": "integer" }, "spd": { "type": "integer" }, "spe": { "type": "integer" } }
+    },
+    "pokemon": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["species", "trainerSet", "level", "nature", "ability", "item", "itemOn", "ivs", "evs", "boosts", "status", "moves", "currentHp", "calculatedStats"],
+      "properties": {
+        "species": { "type": "string", "minLength": 1 },
+        "trainerSet": { "type": ["object", "null"] },
+        "level": { "type": "integer", "minimum": 1 },
+        "nature": { "type": "string" },
+        "ability": { "type": "string" },
+        "item": { "type": "string" },
+        "itemOn": { "type": "boolean" },
+        "ivs": { "$ref": "#/$defs/statBlock" },
+        "evs": { "$ref": "#/$defs/statBlock" },
+        "boosts": { "$ref": "#/$defs/statBlock" },
+        "status": { "type": "string" },
+        "moves": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "currentHp": { "type": "integer", "minimum": 1 },
+        "calculatedStats": { "$ref": "#/$defs/statBlock" }
+      }
+    },
+    "case": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "purpose", "auditFindings", "provenance", "inputs", "expected"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^EK4-[0-9]{2,}$" },
+        "purpose": { "type": "string", "minLength": 1 },
+        "auditFindings": { "type": "array", "items": { "type": "string", "pattern": "^EK-AUDIT-[0-9]{2}$" } },
+        "provenance": { "type": "object", "required": ["trainerKeys", "calculation"] },
+        "inputs": {
+          "type": "object", "additionalProperties": false,
+          "required": ["configuration", "attacker", "defender", "move", "field"],
+          "properties": {
+            "configuration": { "type": "object", "required": ["dataset", "configurationSha256", "mechanicsGeneration", "dataGeneration", "criticalModel", "physicalSpecialSplit"] },
+            "attacker": { "$ref": "#/$defs/pokemon" },
+            "defender": { "$ref": "#/$defs/pokemon" },
+            "move": { "type": "object", "required": ["name", "type", "basePower", "category", "hits", "critical"] },
+            "field": { "type": "object", "required": ["gameType", "weather", "terrain", "attackerSide", "defenderSide", "inverse"] }
+          }
+        },
+        "expected": {
+          "type": "object", "additionalProperties": false,
+          "required": ["rawDamage", "rangeHp", "rangePercent", "ko", "uncertainty"],
+          "properties": {
+            "rawDamage": { "oneOf": [{ "type": "integer" }, { "type": "array", "items": { "oneOf": [{ "type": "integer" }, { "type": "array", "items": { "type": "integer" } }] } }] },
+            "rangeHp": { "type": "array", "prefixItems": [{ "type": "integer" }, { "type": "integer" }], "minItems": 2, "maxItems": 2 },
+            "rangePercent": { "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }], "minItems": 2, "maxItems": 2 },
+            "ko": { "type": ["object", "null"] },
+            "uncertainty": { "type": ["string", "null"] }
+          }
+        }
+      }
+    }
+  }
+}

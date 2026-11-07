@@ -1,0 +1,7533 @@
+{
+  "cases": [
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 0.78125,
+          "description": "78.1% chance to 2HKO",
+          "turns": 2
+        },
+        "rangeHp": [
+          18,
+          22
+        ],
+        "rangePercent": [
+          46.2,
+          56.4
+        ],
+        "rawDamage": [
+          18,
+          18,
+          19,
+          19,
+          19,
+          19,
+          20,
+          20,
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-01",
+      "inputs": {
+        "attacker": {
+          "ability": "Battle Armor",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 35,
+            "def": 23,
+            "hp": 40,
+            "spa": 20,
+            "spd": 23,
+            "spe": 30
+          },
+          "currentHp": 40,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Aerial Ace",
+            "Brick Break",
+            "X-Scissor",
+            "Rock Slide"
+          ],
+          "nature": "Quiet",
+          "species": "Anorith",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 31,
+            "def": 37,
+            "hp": 39,
+            "spa": 17,
+            "spd": 17,
+            "spe": 14
+          },
+          "currentHp": 39,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": true,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 75,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Brick Break",
+          "type": "Fighting"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        ]
+      },
+      "purpose": "Brick Break removes Reflect"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-03",
+        "EK-AUDIT-07"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed OHKO",
+          "turns": 1
+        },
+        "rangeHp": [
+          40,
+          48
+        ],
+        "rangePercent": [
+          100,
+          120
+        ],
+        "rawDamage": [
+          40,
+          41,
+          41,
+          42,
+          42,
+          43,
+          43,
+          44,
+          44,
+          45,
+          45,
+          46,
+          46,
+          47,
+          47,
+          48
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-02",
+      "inputs": {
+        "attacker": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 31,
+            "def": 37,
+            "hp": 39,
+            "spa": 17,
+            "spd": 17,
+            "spe": 14
+          },
+          "currentHp": 39,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Rock Slide"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Battle Armor",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 35,
+            "def": 23,
+            "hp": 40,
+            "spa": 20,
+            "spd": 23,
+            "spe": 30
+          },
+          "currentHp": 40,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Aerial Ace",
+            "Brick Break",
+            "X-Scissor",
+            "Rock Slide"
+          ],
+          "nature": "Quiet",
+          "species": "Anorith",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 75,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Rock Slide",
+          "type": "Rock"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        ]
+      },
+      "purpose": "Reverse physical attack into a dual-type trainer"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 2HKO",
+          "turns": 2
+        },
+        "rangeHp": [
+          68,
+          81
+        ],
+        "rangePercent": [
+          80,
+          95.3
+        ],
+        "rawDamage": [
+          68,
+          69,
+          70,
+          71,
+          72,
+          72,
+          73,
+          74,
+          75,
+          76,
+          76,
+          77,
+          78,
+          79,
+          80,
+          81
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-03",
+      "inputs": {
+        "attacker": {
+          "ability": "Team Magma Armor",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 88,
+            "def": 66,
+            "hp": 107,
+            "spa": 91,
+            "spd": 70,
+            "spe": 44
+          },
+          "currentHp": 107,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Quick Claw",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 36,
+          "moves": [
+            "Explosion",
+            "Earthquake",
+            "Overheat",
+            "Body Slam"
+          ],
+          "nature": "Docile",
+          "species": "Camerupt",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 36 Team Magma Grunt #2 @ Mt. Chimney ",
+            "subIndex": 0,
+            "trId": 118
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 73,
+            "def": 88,
+            "hp": 85,
+            "spa": 37,
+            "spd": 37,
+            "spe": 30
+          },
+          "currentHp": 85,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 36,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 250,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Explosion",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 36 Team Magma Grunt #2 @ Mt. Chimney ",
+            "subIndex": 0,
+            "trId": 118
+          }
+        ]
+      },
+      "purpose": "Explosion defense handling"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-05",
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 5HKO",
+          "turns": 5
+        },
+        "rangeHp": [
+          19,
+          23
+        ],
+        "rangePercent": [
+          20.2,
+          24.5
+        ],
+        "rawDamage": [
+          19,
+          19,
+          20,
+          20,
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-04",
+      "inputs": {
+        "attacker": {
+          "ability": "Forecast",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 105,
+            "def": 77,
+            "hp": 122,
+            "spa": 105,
+            "spd": 77,
+            "spe": 97
+          },
+          "currentHp": 122,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Choice Band",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Weather Ball"
+          ],
+          "nature": "Sassy",
+          "species": "Castform",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 81,
+            "def": 97,
+            "hp": 94,
+            "spa": 41,
+            "spd": 41,
+            "spe": 33
+          },
+          "currentHp": 94,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 50,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Weather Ball",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        ]
+      },
+      "purpose": "Choice Band Weather Ball in clear weather"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed OHKO",
+          "turns": 1
+        },
+        "rangeHp": [
+          724,
+          852
+        ],
+        "rangePercent": [
+          770.2,
+          906.4
+        ],
+        "rawDamage": [
+          724,
+          732,
+          741,
+          749,
+          758,
+          766,
+          775,
+          783,
+          792,
+          800,
+          809,
+          817,
+          826,
+          834,
+          843,
+          852
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-05",
+      "inputs": {
+        "attacker": {
+          "ability": "Forecast",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 105,
+            "def": 77,
+            "hp": 122,
+            "spa": 105,
+            "spd": 77,
+            "spe": 97
+          },
+          "currentHp": 122,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Choice Band",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Weather Ball"
+          ],
+          "nature": "Sassy",
+          "species": "Castform",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 81,
+            "def": 97,
+            "hp": 94,
+            "spa": 41,
+            "spd": 41,
+            "spe": 33
+          },
+          "currentHp": 94,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": "Rain"
+        },
+        "move": {
+          "basePower": 50,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Weather Ball",
+          "type": "Water"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        ]
+      },
+      "purpose": "Weather Ball in rain"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 0.75,
+          "description": "75% chance to OHKO",
+          "turns": 1
+        },
+        "rangeHp": [
+          90,
+          106
+        ],
+        "rangePercent": [
+          95.7,
+          112.8
+        ],
+        "rawDamage": [
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          100,
+          101,
+          102,
+          103,
+          104,
+          106
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-06",
+      "inputs": {
+        "attacker": {
+          "ability": "Forecast",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 105,
+            "def": 77,
+            "hp": 122,
+            "spa": 105,
+            "spd": 77,
+            "spe": 97
+          },
+          "currentHp": 122,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Choice Band",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Weather Ball"
+          ],
+          "nature": "Sassy",
+          "species": "Castform",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 81,
+            "def": 97,
+            "hp": 94,
+            "spa": 41,
+            "spd": 41,
+            "spe": 33
+          },
+          "currentHp": 94,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": "Sun"
+        },
+        "move": {
+          "basePower": 50,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Weather Ball",
+          "type": "Fire"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        ]
+      },
+      "purpose": "Weather Ball in sun"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 4HKO",
+          "turns": 4
+        },
+        "rangeHp": [
+          26,
+          31
+        ],
+        "rangePercent": [
+          27.7,
+          33
+        ],
+        "rawDamage": [
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28,
+          28,
+          28,
+          29,
+          29,
+          29,
+          30,
+          30,
+          30,
+          31
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-07",
+      "inputs": {
+        "attacker": {
+          "ability": "Forecast",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 105,
+            "def": 77,
+            "hp": 122,
+            "spa": 105,
+            "spd": 77,
+            "spe": 97
+          },
+          "currentHp": 122,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Choice Band",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Weather Ball"
+          ],
+          "nature": "Sassy",
+          "species": "Castform",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 81,
+            "def": 97,
+            "hp": 94,
+            "spa": 41,
+            "spd": 41,
+            "spe": 33
+          },
+          "currentHp": 94,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": "Sand"
+        },
+        "move": {
+          "basePower": 50,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Weather Ball",
+          "type": "Rock"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        ]
+      },
+      "purpose": "Weather Ball in sand"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 2HKO",
+          "turns": 2
+        },
+        "rangeHp": [
+          71,
+          84
+        ],
+        "rangePercent": [
+          54.2,
+          64.1
+        ],
+        "rawDamage": [
+          71,
+          72,
+          73,
+          73,
+          74,
+          75,
+          76,
+          77,
+          78,
+          78,
+          79,
+          80,
+          81,
+          82,
+          83,
+          84
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-08",
+      "inputs": {
+        "attacker": {
+          "ability": "Shell Armor",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 126,
+            "def": 95,
+            "hp": 125,
+            "spa": 99,
+            "spd": 68,
+            "spe": 68
+          },
+          "currentHp": 125,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 45,
+          "moves": [
+            "Pursuit",
+            "Crabhammer",
+            "X-Scissor",
+            "Hidden Power Flying"
+          ],
+          "nature": "Hasty",
+          "species": "Crawdaunt",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 45 Pokémon Ranger Jackson ",
+            "subIndex": 1,
+            "trId": 148
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Synchronize",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 77,
+            "def": 86,
+            "hp": 131,
+            "spa": 131,
+            "spd": 122,
+            "spe": 99
+          },
+          "currentHp": 131,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 45,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Gardevoir",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": "out",
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 40,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Pursuit",
+          "type": "Dark"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 45 Pokémon Ranger Jackson ",
+            "subIndex": 1,
+            "trId": 148
+          }
+        ]
+      },
+      "purpose": "Pursuit while defender switches"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 4HKO",
+          "turns": 4
+        },
+        "rangeHp": [
+          35,
+          42
+        ],
+        "rangePercent": [
+          26.7,
+          32.1
+        ],
+        "rawDamage": [
+          35,
+          36,
+          36,
+          36,
+          37,
+          37,
+          38,
+          38,
+          39,
+          39,
+          39,
+          40,
+          40,
+          41,
+          41,
+          42
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-09",
+      "inputs": {
+        "attacker": {
+          "ability": "Shell Armor",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 126,
+            "def": 95,
+            "hp": 125,
+            "spa": 99,
+            "spd": 68,
+            "spe": 68
+          },
+          "currentHp": 125,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 45,
+          "moves": [
+            "Pursuit",
+            "Crabhammer",
+            "X-Scissor",
+            "Hidden Power Flying"
+          ],
+          "nature": "Hasty",
+          "species": "Crawdaunt",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 45 Pokémon Ranger Jackson ",
+            "subIndex": 1,
+            "trId": 148
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Synchronize",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 77,
+            "def": 86,
+            "hp": 131,
+            "spa": 131,
+            "spd": 122,
+            "spe": 99
+          },
+          "currentHp": 131,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 45,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Gardevoir",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 40,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Pursuit",
+          "type": "Dark"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 45 Pokémon Ranger Jackson ",
+            "subIndex": 1,
+            "trId": 148
+          }
+        ]
+      },
+      "purpose": "Pursuit without switching"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-06"
+      ],
+      "expected": {
+        "ko": null,
+        "rangeHp": [
+          0,
+          0
+        ],
+        "rangePercent": [
+          0,
+          0
+        ],
+        "rawDamage": 0,
+        "uncertainty": "Pinned Gen 3 path returns zero before its Pain Split hook; status effect unresolved. KO API unavailable: damage[damage.length - 1] === 0."
+      },
+      "id": "EK4-10",
+      "inputs": {
+        "attacker": {
+          "ability": "Levitate",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 38,
+            "def": 68,
+            "hp": 61,
+            "spa": 32,
+            "spd": 68,
+            "spe": 29
+          },
+          "currentHp": 61,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Leftovers",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 30,
+          "moves": [
+            "Will-O-Wisp",
+            "Night Shade",
+            "Protect",
+            "Pain Split"
+          ],
+          "nature": "Jolly",
+          "species": "Duskull",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 30 Ruin Maniac Bryan ",
+            "subIndex": 2,
+            "trId": 362
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 62,
+            "def": 74,
+            "hp": 73,
+            "spa": 32,
+            "spd": 32,
+            "spe": 26
+          },
+          "currentHp": 36,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 30,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 0,
+          "category": "Status",
+          "critical": false,
+          "hits": 1,
+          "name": "Pain Split",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 30 Ruin Maniac Bryan ",
+            "subIndex": 2,
+            "trId": 362
+          }
+        ]
+      },
+      "purpose": "Pain Split at unequal current HP"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-02",
+        "EK-AUDIT-05"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 0.0052947998046875,
+          "description": "0.5% chance to 4HKO",
+          "turns": 4
+        },
+        "rangeHp": [
+          23,
+          28
+        ],
+        "rangePercent": [
+          21.1,
+          25.7
+        ],
+        "rawDamage": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-11",
+      "inputs": {
+        "attacker": {
+          "ability": "Huge Power",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 75,
+            "def": 94,
+            "hp": 165,
+            "spa": 75,
+            "spd": 94,
+            "spe": 66
+          },
+          "currentHp": 165,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Mystic Water",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Sing",
+            "Return",
+            "Surf",
+            "Ice Beam"
+          ],
+          "nature": "Quiet",
+          "species": "Azumarill",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 94,
+            "def": 113,
+            "hp": 109,
+            "spa": 47,
+            "spd": 47,
+            "spe": 38
+          },
+          "currentHp": 109,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 102,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Return",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        ]
+      },
+      "purpose": "Huge Power and Return base-power override"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-02"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 0.04296875,
+          "description": "4.3% chance to 2HKO",
+          "turns": 2
+        },
+        "rangeHp": [
+          17,
+          20
+        ],
+        "rangePercent": [
+          43.6,
+          51.3
+        ],
+        "rawDamage": [
+          17,
+          17,
+          17,
+          17,
+          17,
+          18,
+          18,
+          18,
+          18,
+          18,
+          19,
+          19,
+          19,
+          19,
+          19,
+          20
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-12",
+      "inputs": {
+        "attacker": {
+          "ability": "Oblivious",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 22,
+            "def": 21,
+            "hp": 42,
+            "spa": 22,
+            "spd": 20,
+            "spe": 26
+          },
+          "currentHp": 42,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Focus Band",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Magnitude",
+            "Dragon Dance",
+            "Water Pulse",
+            "Secret Power"
+          ],
+          "nature": "Lonely",
+          "species": "Barboach",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 14 Team Aqua Grunt @ Rusturf Tunnel ",
+            "subIndex": 3,
+            "trId": 29
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 31,
+            "def": 37,
+            "hp": 39,
+            "spa": 17,
+            "spd": 17,
+            "spe": 14
+          },
+          "currentHp": 39,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 70,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Magnitude",
+          "type": "Ground"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 14 Team Aqua Grunt @ Rusturf Tunnel ",
+            "subIndex": 3,
+            "trId": 29
+          }
+        ]
+      },
+      "purpose": "Magnitude fixed UI base power"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-09"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed OHKO",
+          "turns": 1
+        },
+        "rangeHp": [
+          397,
+          468
+        ],
+        "rangePercent": [
+          249.7,
+          294.3
+        ],
+        "rawDamage": [
+          397,
+          402,
+          407,
+          411,
+          416,
+          421,
+          425,
+          430,
+          435,
+          439,
+          444,
+          449,
+          453,
+          458,
+          463,
+          468
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-13",
+      "inputs": {
+        "attacker": {
+          "ability": "Static",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 133,
+            "def": 147,
+            "hp": 230,
+            "spa": 190,
+            "spd": 154,
+            "spe": 105
+          },
+          "currentHp": 230,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Thunder",
+            "Signal Beam",
+            "Hidden Power Water",
+            "Brick Break"
+          ],
+          "nature": "Modest",
+          "species": "Ampharos",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 140,
+            "def": 169,
+            "hp": 159,
+            "spa": 69,
+            "spd": 69,
+            "spe": 55
+          },
+          "currentHp": 159,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 70,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Hidden Power Water",
+          "type": "Water"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        ]
+      },
+      "purpose": "Typed Hidden Power Water"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-09"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 2HKO",
+          "turns": 2
+        },
+        "rangeHp": [
+          104,
+          123
+        ],
+        "rangePercent": [
+          53.3,
+          63.1
+        ],
+        "rawDamage": [
+          104,
+          105,
+          107,
+          108,
+          109,
+          110,
+          111,
+          113,
+          114,
+          115,
+          116,
+          118,
+          119,
+          120,
+          121,
+          123
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-14",
+      "inputs": {
+        "attacker": {
+          "ability": "Static",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 178,
+            "def": 132,
+            "hp": 239,
+            "spa": 199,
+            "spd": 181,
+            "spe": 217
+          },
+          "currentHp": 239,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 88,
+          "moves": [
+            "Thunderbolt",
+            "Hidden Power",
+            "Ice Punch",
+            "Fire Punch"
+          ],
+          "nature": "Naughty",
+          "species": "Electabuzz",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 88 Expert Edgar ",
+            "subIndex": 2,
+            "trId": 322
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 173,
+            "def": 208,
+            "hp": 195,
+            "spa": 85,
+            "spd": 85,
+            "spe": 67
+          },
+          "currentHp": 195,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 88,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 70,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Hidden Power",
+          "type": "Dark"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 88 Expert Edgar ",
+            "subIndex": 2,
+            "trId": 322
+          }
+        ]
+      },
+      "purpose": "Generic Hidden Power from default explicit IVs"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-09"
+      ],
+      "expected": {
+        "ko": {
+          "chance": null,
+          "description": "possible 5HKO",
+          "turns": 5
+        },
+        "rangeHp": [
+          11,
+          13
+        ],
+        "rangePercent": [
+          19,
+          22.4
+        ],
+        "rawDamage": [
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-15",
+      "inputs": {
+        "attacker": {
+          "ability": "Levitate",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 44,
+            "def": 33,
+            "hp": 61,
+            "spa": 44,
+            "spd": 33,
+            "spe": 33
+          },
+          "currentHp": 61,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Choice Band",
+          "itemOn": true,
+          "ivs": {
+            "atk": 29,
+            "def": 29,
+            "hp": 29,
+            "spa": 29,
+            "spd": 29,
+            "spe": 29
+          },
+          "level": 23,
+          "moves": [
+            "Hidden Power"
+          ],
+          "nature": "Docile",
+          "species": "Unown",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 23 Psychic Brandi ",
+            "subIndex": 0,
+            "trId": 72
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 48,
+            "def": 58,
+            "hp": 58,
+            "spa": 25,
+            "spd": 25,
+            "spe": 21
+          },
+          "currentHp": 58,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 23,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 30,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Hidden Power",
+          "type": "Dark"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 23 Psychic Brandi ",
+            "subIndex": 0,
+            "trId": 72
+          }
+        ]
+      },
+      "purpose": "Generic Hidden Power from trainer IVs"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-08"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 2HKO",
+          "turns": 2
+        },
+        "rangeHp": [
+          30,
+          36
+        ],
+        "rangePercent": [
+          69.8,
+          83.7
+        ],
+        "rawDamage": [
+          [
+            15,
+            15,
+            15,
+            15,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            17,
+            17,
+            17,
+            17,
+            17,
+            18
+          ],
+          [
+            15,
+            15,
+            15,
+            15,
+            16,
+            16,
+            16,
+            16,
+            16,
+            16,
+            17,
+            17,
+            17,
+            17,
+            17,
+            18
+          ]
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-16",
+      "inputs": {
+        "attacker": {
+          "ability": "Blaze",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 36,
+            "def": 28,
+            "hp": 49,
+            "spa": 36,
+            "spd": 28,
+            "spe": 26
+          },
+          "currentHp": 49,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Starf Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 24,
+            "def": 24,
+            "hp": 24,
+            "spa": 24,
+            "spd": 24,
+            "spe": 24
+          },
+          "level": 16,
+          "moves": [
+            "Ember",
+            "Double Kick",
+            "Rock Tomb",
+            "Endure"
+          ],
+          "nature": "Jolly",
+          "species": "Combusken",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 16 Battle Girl Lilith ",
+            "subIndex": 2,
+            "trId": 32
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 35,
+            "def": 41,
+            "hp": 43,
+            "spa": 19,
+            "spd": 19,
+            "spe": 16
+          },
+          "currentHp": 43,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 16,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 30,
+          "category": "Physical",
+          "critical": false,
+          "hits": 2,
+          "name": "Double Kick",
+          "type": "Fighting"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 16 Battle Girl Lilith ",
+            "subIndex": 2,
+            "trId": 32
+          }
+        ]
+      },
+      "purpose": "Double Kick per-hit roll matrix"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-05"
+      ],
+      "expected": {
+        "ko": {
+          "chance": null,
+          "description": "possible 5HKO",
+          "turns": 5
+        },
+        "rangeHp": [
+          7,
+          9
+        ],
+        "rangePercent": [
+          17.9,
+          23.1
+        ],
+        "rawDamage": [
+          7,
+          7,
+          7,
+          7,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          8,
+          9
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-17",
+      "inputs": {
+        "attacker": {
+          "ability": "Battle Armor",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 35,
+            "def": 23,
+            "hp": 40,
+            "spa": 20,
+            "spd": 23,
+            "spe": 30
+          },
+          "currentHp": 40,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Aerial Ace",
+            "Brick Break",
+            "X-Scissor",
+            "Rock Slide"
+          ],
+          "nature": "Quiet",
+          "species": "Anorith",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 31,
+            "def": 37,
+            "hp": 39,
+            "spa": 17,
+            "spd": 17,
+            "spe": 14
+          },
+          "currentHp": 39,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": true,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 60,
+          "category": "Physical",
+          "critical": true,
+          "hits": 1,
+          "name": "Aerial Ace",
+          "type": "Flying"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        ]
+      },
+      "purpose": "Critical hit bypasses Reflect"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-05"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 0,
+          "description": "",
+          "turns": 0
+        },
+        "rangeHp": [
+          1,
+          1
+        ],
+        "rangePercent": [
+          2.6,
+          2.6
+        ],
+        "rawDamage": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-18",
+      "inputs": {
+        "attacker": {
+          "ability": "Battle Armor",
+          "boosts": {
+            "atk": -2,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 35,
+            "def": 23,
+            "hp": 40,
+            "spa": 20,
+            "spd": 23,
+            "spe": 30
+          },
+          "currentHp": 40,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Aerial Ace",
+            "Brick Break",
+            "X-Scissor",
+            "Rock Slide"
+          ],
+          "nature": "Quiet",
+          "species": "Anorith",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 2,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 31,
+            "def": 37,
+            "hp": 39,
+            "spa": 17,
+            "spd": 17,
+            "spe": 14
+          },
+          "currentHp": 39,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 14,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 60,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Aerial Ace",
+          "type": "Flying"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 14 Leader Roxanne ",
+            "subIndex": 2,
+            "trId": 18
+          }
+        ]
+      },
+      "purpose": "Negative attack and positive defense boosts"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-08"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 2HKO after Leftovers recovery and Leech Seed damage",
+          "turns": 2
+        },
+        "rangeHp": [
+          23,
+          28
+        ],
+        "rangePercent": [
+          21.1,
+          25.7
+        ],
+        "rawDamage": [
+          23,
+          24,
+          24,
+          24,
+          24,
+          25,
+          25,
+          25,
+          26,
+          26,
+          26,
+          26,
+          27,
+          27,
+          27,
+          28
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-19",
+      "inputs": {
+        "attacker": {
+          "ability": "Huge Power",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 75,
+            "def": 94,
+            "hp": 165,
+            "spa": 75,
+            "spd": 94,
+            "spe": 66
+          },
+          "currentHp": 165,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Mystic Water",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Sing",
+            "Return",
+            "Surf",
+            "Ice Beam"
+          ],
+          "nature": "Quiet",
+          "species": "Azumarill",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 94,
+            "def": 113,
+            "hp": 109,
+            "spa": 47,
+            "spd": 47,
+            "spe": 38
+          },
+          "currentHp": 54,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Leftovers",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": true,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 102,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Return",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        ]
+      },
+      "purpose": "Partial-HP KO with residual and Leftovers"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-05"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 5HKO",
+          "turns": 5
+        },
+        "rangeHp": [
+          19,
+          23
+        ],
+        "rangePercent": [
+          20.2,
+          24.5
+        ],
+        "rawDamage": [
+          19,
+          19,
+          20,
+          20,
+          20,
+          20,
+          20,
+          21,
+          21,
+          21,
+          21,
+          22,
+          22,
+          22,
+          22,
+          23
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-20",
+      "inputs": {
+        "attacker": {
+          "ability": "Forecast",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 105,
+            "def": 77,
+            "hp": 122,
+            "spa": 105,
+            "spd": 77,
+            "spe": 97
+          },
+          "currentHp": 122,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Choice Band",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Weather Ball"
+          ],
+          "nature": "Sassy",
+          "species": "Castform",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 81,
+            "def": 97,
+            "hp": 94,
+            "spa": 41,
+            "spd": 41,
+            "spe": 33
+          },
+          "currentHp": 94,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": true,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 50,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Weather Ball",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        ]
+      },
+      "purpose": "Special attack into Light Screen"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-04"
+      ],
+      "expected": {
+        "ko": {
+          "chance": null,
+          "description": "possible 7HKO",
+          "turns": 7
+        },
+        "rangeHp": [
+          12,
+          15
+        ],
+        "rangePercent": [
+          12.8,
+          16
+        ],
+        "rawDamage": [
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14,
+          14,
+          14,
+          14,
+          14,
+          14,
+          15
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-21",
+      "inputs": {
+        "attacker": {
+          "ability": "Forecast",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 105,
+            "def": 77,
+            "hp": 122,
+            "spa": 105,
+            "spd": 77,
+            "spe": 97
+          },
+          "currentHp": 122,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Choice Band",
+          "itemOn": false,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Weather Ball"
+          ],
+          "nature": "Sassy",
+          "species": "Castform",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 81,
+            "def": 97,
+            "hp": 94,
+            "spa": 41,
+            "spd": 41,
+            "spe": 33
+          },
+          "currentHp": 94,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 40,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 50,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Weather Ball",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 40 Camper Beau ",
+            "subIndex": 0,
+            "trId": 373
+          }
+        ]
+      },
+      "purpose": "Item activation disabled"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-04"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed OHKO",
+          "turns": 1
+        },
+        "rangeHp": [
+          127,
+          150
+        ],
+        "rangePercent": [
+          101.6,
+          120
+        ],
+        "rawDamage": [
+          127,
+          129,
+          130,
+          132,
+          133,
+          135,
+          136,
+          138,
+          139,
+          141,
+          142,
+          144,
+          145,
+          147,
+          148,
+          150
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-22",
+      "inputs": {
+        "attacker": {
+          "ability": "Synchronize",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 77,
+            "def": 86,
+            "hp": 131,
+            "spa": 131,
+            "spd": 122,
+            "spe": 99
+          },
+          "currentHp": 131,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 45,
+          "moves": [
+            "Thunderbolt"
+          ],
+          "nature": "Hardy",
+          "species": "Gardevoir",
+          "status": "",
+          "trainerSet": null
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Shell Armor",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 126,
+            "def": 95,
+            "hp": 125,
+            "spa": 99,
+            "spd": 68,
+            "spe": 68
+          },
+          "currentHp": 125,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 45,
+          "moves": [
+            "Pursuit",
+            "Crabhammer",
+            "X-Scissor",
+            "Hidden Power Flying"
+          ],
+          "nature": "Hasty",
+          "species": "Crawdaunt",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 45 Pokémon Ranger Jackson ",
+            "subIndex": 1,
+            "trId": 148
+          }
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 95,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Thunderbolt",
+          "type": "Electric"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 45 Pokémon Ranger Jackson ",
+            "subIndex": 1,
+            "trId": 148
+          }
+        ]
+      },
+      "purpose": "Reverse special attack direction"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-05"
+      ],
+      "expected": {
+        "ko": {
+          "chance": null,
+          "description": "possible 8HKO",
+          "turns": 8
+        },
+        "rangeHp": [
+          11,
+          14
+        ],
+        "rangePercent": [
+          10.1,
+          12.8
+        ],
+        "rawDamage": [
+          11,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          13,
+          14
+        ],
+        "uncertainty": null
+      },
+      "id": "EK4-23",
+      "inputs": {
+        "attacker": {
+          "ability": "Huge Power",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 75,
+            "def": 94,
+            "hp": 165,
+            "spa": 75,
+            "spd": 94,
+            "spe": 66
+          },
+          "currentHp": 165,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Mystic Water",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Sing",
+            "Return",
+            "Surf",
+            "Ice Beam"
+          ],
+          "nature": "Quiet",
+          "species": "Azumarill",
+          "status": "brn",
+          "trainerSet": {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Rock Head",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 94,
+            "def": 113,
+            "hp": 109,
+            "spa": 47,
+            "spd": 47,
+            "spe": 38
+          },
+          "currentHp": 109,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Geodude",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 102,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Return",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        ]
+      },
+      "purpose": "Burned physical attacker"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-07"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed OHKO",
+          "turns": 1
+        },
+        "rangeHp": [
+          418,
+          492
+        ],
+        "rangePercent": [
+          176.4,
+          207.6
+        ],
+        "rawDamage": [
+          418,
+          423,
+          428,
+          432,
+          437,
+          442,
+          447,
+          452,
+          457,
+          462,
+          467,
+          472,
+          477,
+          482,
+          487,
+          492
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-24",
+      "inputs": {
+        "attacker": {
+          "ability": "Static",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 133,
+            "def": 147,
+            "hp": 230,
+            "spa": 190,
+            "spd": 154,
+            "spe": 105
+          },
+          "currentHp": 230,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Thunder",
+            "Signal Beam",
+            "Hidden Power Water",
+            "Brick Break"
+          ],
+          "nature": "Modest",
+          "species": "Ampharos",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Intimidate",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 204,
+            "def": 139,
+            "hp": 237,
+            "spa": 112,
+            "spd": 169,
+            "spe": 142
+          },
+          "currentHp": 237,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Gyarados",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 120,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Thunder",
+          "type": "Electric"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        ]
+      },
+      "purpose": "Fourfold dual-type effectiveness"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-07"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 4HKO",
+          "turns": 4
+        },
+        "rangeHp": [
+          56,
+          67
+        ],
+        "rangePercent": [
+          26.8,
+          32.1
+        ],
+        "rawDamage": [
+          56,
+          57,
+          58,
+          58,
+          59,
+          60,
+          60,
+          61,
+          62,
+          62,
+          63,
+          64,
+          64,
+          65,
+          66,
+          67
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-25",
+      "inputs": {
+        "attacker": {
+          "ability": "Static",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 133,
+            "def": 147,
+            "hp": 230,
+            "spa": 190,
+            "spd": 154,
+            "spe": 105
+          },
+          "currentHp": 230,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Thunder",
+            "Signal Beam",
+            "Hidden Power Water",
+            "Brick Break"
+          ],
+          "nature": "Modest",
+          "species": "Ampharos",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Chlorophyll",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 140,
+            "def": 147,
+            "hp": 209,
+            "spa": 183,
+            "spd": 154,
+            "spe": 98
+          },
+          "currentHp": 209,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Vileplume",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 120,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Thunder",
+          "type": "Electric"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        ]
+      },
+      "purpose": "Half dual-type effectiveness"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-07",
+        "EK-AUDIT-09"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 0,
+          "description": "",
+          "turns": 0
+        },
+        "rangeHp": [
+          10,
+          12
+        ],
+        "rangePercent": [
+          4.6,
+          5.6
+        ],
+        "rawDamage": [
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          10,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          11,
+          12
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-26",
+      "inputs": {
+        "attacker": {
+          "ability": "Static",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 133,
+            "def": 147,
+            "hp": 230,
+            "spa": 190,
+            "spd": 154,
+            "spe": 105
+          },
+          "currentHp": 230,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Thunder",
+            "Signal Beam",
+            "Hidden Power Water",
+            "Brick Break"
+          ],
+          "nature": "Modest",
+          "species": "Ampharos",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Swift Swim",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 126,
+            "def": 126,
+            "hp": 216,
+            "spa": 154,
+            "spd": 169,
+            "spe": 126
+          },
+          "currentHp": 216,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Ludicolo",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 70,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Hidden Power Water",
+          "type": "Water"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        ]
+      },
+      "purpose": "Quarter dual-type effectiveness"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-07"
+      ],
+      "expected": {
+        "ko": null,
+        "rangeHp": [
+          0,
+          0
+        ],
+        "rangePercent": [
+          0,
+          0
+        ],
+        "rawDamage": 0,
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-27",
+      "inputs": {
+        "attacker": {
+          "ability": "Static",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 133,
+            "def": 147,
+            "hp": 230,
+            "spa": 190,
+            "spd": 154,
+            "spe": 105
+          },
+          "currentHp": 230,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Thunder",
+            "Signal Beam",
+            "Hidden Power Water",
+            "Brick Break"
+          ],
+          "nature": "Modest",
+          "species": "Ampharos",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Oblivious",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 137,
+            "def": 130,
+            "hp": 259,
+            "spa": 134,
+            "spd": 127,
+            "spe": 112
+          },
+          "currentHp": 259,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Whiscash",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 120,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Thunder",
+          "type": "Electric"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        ]
+      },
+      "purpose": "Dual-type immunity"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-07"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed OHKO",
+          "turns": 1
+        },
+        "rangeHp": [
+          336,
+          396
+        ],
+        "rangePercent": [
+          175,
+          206.3
+        ],
+        "rawDamage": [
+          336,
+          340,
+          344,
+          348,
+          352,
+          356,
+          360,
+          364,
+          368,
+          372,
+          376,
+          380,
+          384,
+          388,
+          392,
+          396
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-28",
+      "inputs": {
+        "attacker": {
+          "ability": "Static",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 133,
+            "def": 147,
+            "hp": 230,
+            "spa": 190,
+            "spd": 154,
+            "spe": 105
+          },
+          "currentHp": 230,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Lum Berry",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Thunder",
+            "Signal Beam",
+            "Hidden Power Water",
+            "Brick Break"
+          ],
+          "nature": "Modest",
+          "species": "Ampharos",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Hyper Cutter",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 197,
+            "def": 147,
+            "hp": 192,
+            "spa": 154,
+            "spd": 105,
+            "spe": 105
+          },
+          "currentHp": 192,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 71,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Crawdaunt",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 120,
+          "category": "Special",
+          "critical": false,
+          "hits": 1,
+          "name": "Thunder",
+          "type": "Electric"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 71 Parasol Lady Daphne ",
+            "subIndex": 5,
+            "trId": 283
+          }
+        ]
+      },
+      "purpose": "Twofold dual-type effectiveness"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-07"
+      ],
+      "expected": {
+        "ko": null,
+        "rangeHp": [
+          0,
+          0
+        ],
+        "rangePercent": [
+          0,
+          0
+        ],
+        "rawDamage": 0,
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-29",
+      "inputs": {
+        "attacker": {
+          "ability": "Huge Power",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 75,
+            "def": 94,
+            "hp": 165,
+            "spa": 75,
+            "spd": 94,
+            "spe": 66
+          },
+          "currentHp": 165,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Mystic Water",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Sing",
+            "Return",
+            "Surf",
+            "Ice Beam"
+          ],
+          "nature": "Quiet",
+          "species": "Azumarill",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Levitate",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 57,
+            "def": 104,
+            "hp": 90,
+            "spa": 47,
+            "spd": 104,
+            "spe": 43
+          },
+          "currentHp": 90,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Duskull",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 102,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Return",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        ]
+      },
+      "purpose": "Normal into Ghost immunity"
+    },
+    {
+      "auditFindings": [
+        "EK-AUDIT-07"
+      ],
+      "expected": {
+        "ko": {
+          "chance": 1,
+          "description": "guaranteed 2HKO",
+          "turns": 2
+        },
+        "rangeHp": [
+          51,
+          60
+        ],
+        "rangePercent": [
+          56.7,
+          66.7
+        ],
+        "rawDamage": [
+          51,
+          51,
+          52,
+          52,
+          53,
+          54,
+          54,
+          55,
+          55,
+          56,
+          57,
+          57,
+          58,
+          58,
+          59,
+          60
+        ],
+        "uncertainty": "Reference output recorded; type rounding and/or Hidden Power convention remain unverified against the game."
+      },
+      "id": "EK4-30",
+      "inputs": {
+        "attacker": {
+          "ability": "Huge Power",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 75,
+            "def": 94,
+            "hp": 165,
+            "spa": 75,
+            "spd": 94,
+            "spe": 66
+          },
+          "currentHp": 165,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "Mystic Water",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Sing",
+            "Return",
+            "Surf",
+            "Ice Beam"
+          ],
+          "nature": "Quiet",
+          "species": "Azumarill",
+          "status": "",
+          "trainerSet": {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        },
+        "configuration": {
+          "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+          "criticalModel": 5,
+          "dataGeneration": 8,
+          "dataset": "emerald-kaizo-original",
+          "mechanicsGeneration": 3,
+          "physicalSpecialSplit": false
+        },
+        "defender": {
+          "ability": "Levitate",
+          "boosts": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "calculatedStats": {
+            "atk": 57,
+            "def": 104,
+            "hp": 90,
+            "spa": 47,
+            "spd": 104,
+            "spe": 43
+          },
+          "currentHp": 90,
+          "evs": {
+            "atk": 0,
+            "def": 0,
+            "hp": 0,
+            "spa": 0,
+            "spd": 0,
+            "spe": 0
+          },
+          "item": "",
+          "itemOn": true,
+          "ivs": {
+            "atk": 31,
+            "def": 31,
+            "hp": 31,
+            "spa": 31,
+            "spd": 31,
+            "spe": 31
+          },
+          "level": 47,
+          "moves": [
+            "Tackle"
+          ],
+          "nature": "Hardy",
+          "species": "Duskull",
+          "status": "",
+          "trainerSet": null
+        },
+        "field": {
+          "attackerSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": false,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "defenderSide": {
+            "cannonade": false,
+            "is10Buff": false,
+            "is15Buff": false,
+            "is20Buff": false,
+            "is25Buff": false,
+            "is30Buff": false,
+            "is50Buff": false,
+            "isAuroraVeil": false,
+            "isBadgeAtk": false,
+            "isBadgeDef": false,
+            "isBadgeSpec": false,
+            "isBadgeSpeed": false,
+            "isBattery": false,
+            "isFlowerGift": false,
+            "isForesight": true,
+            "isFriendGuard": false,
+            "isHelpingHand": false,
+            "isLightScreen": false,
+            "isPowerSpot": false,
+            "isPowerTrick": false,
+            "isProtected": false,
+            "isReflect": false,
+            "isSR": false,
+            "isSeeded": false,
+            "isSwitching": false,
+            "isTailwind": false,
+            "spikes": 0,
+            "steelsurge": false,
+            "vinelash": false,
+            "volcalith": false,
+            "wildfire": false
+          },
+          "gameType": "Singles",
+          "inverse": false,
+          "isAuraBreak": false,
+          "isBeadsOfRuin": false,
+          "isDarkAura": false,
+          "isFairyAura": false,
+          "isGravity": false,
+          "isInverse": false,
+          "isMagicRoom": false,
+          "isShadowyVeil": false,
+          "isSwordOfRuin": false,
+          "isTabletsOfRuin": false,
+          "isVesselOfRuin": false,
+          "isWonderRoom": false,
+          "terrain": null,
+          "weather": null
+        },
+        "move": {
+          "basePower": 102,
+          "category": "Physical",
+          "critical": false,
+          "hits": 1,
+          "name": "Return",
+          "type": "Normal"
+        }
+      },
+      "provenance": {
+        "calculation": "calc/mechanics/gen3.js:calculateADV",
+        "trainerKeys": [
+          {
+            "key": "Lvl 47 Guitarist Beth ",
+            "subIndex": 2,
+            "trId": 166
+          }
+        ]
+      },
+      "purpose": "Foresight into Ghost"
+    }
+  ],
+  "conventions": {
+    "damageUnit": "HP, integer; roll order is reference random factor 85 through 100",
+    "dataGeneration": 8,
+    "koText": "exact pinned-reference Result.kochance().text; chance is a fraction",
+    "mechanicsGeneration": 3,
+    "movePickerGeneration": 9,
+    "percentDenominator": "defender calculated maximum HP",
+    "percentRounding": "one decimal, nearest",
+    "status": "empty string means healthy"
+  },
+  "dataset": "emerald-kaizo-original",
+  "provenance": {
+    "configurationSha256": "0a998c02d3106c8be12c9a054e779294d0046b6e89b3febb83fb313689c02926",
+    "dataSha256": "52d39f69f360b82ca2d7d6fbd8205adc0f6dcd293f4e1239310ca8abd08752fa",
+    "extraSourceSha256": {
+      "calc/desc.js": "61fc811cb3f224e1792fefa7667a61aba9ff88d2ea6f33b8748ecbd3b787efaa",
+      "calc/items.js": "5e465a9b3c16decf00b404a689510b3ffdaf8864d477061cf6c611f3c811b7d7",
+      "calc/result.js": "d963bc0cdc7a3fdebedad48587916d2c9968666b5665daf89d3332c8c551bedd"
+    },
+    "licenses": [
+      "reference/calc/LICENSE",
+      "trainerSource/LICENSE"
+    ],
+    "repository": "hzla/Dynamic-Calc-Decomps",
+    "revision": "883e9837e6281dd9d6963b935b6cda1dbe101293",
+    "snapshot": "backups/ek2.js",
+    "snapshotSha256": "93b0732ccd62c434f4dac95f47e9f1c83412efc4c95326c75dbfc28f722d99c0"
+  },
+  "schemaVersion": 1
+}

@@ -6,6 +6,8 @@
     "baseline:audit": "node scripts/baseline/audit-emerald-kaizo.mjs",
     "baseline:fetch": "node scripts/baseline/emerald-kaizo.mjs fetch",
     "baseline:verify": "node scripts/baseline/emerald-kaizo.mjs verify",
+    "baseline:fixtures:fetch": "node scripts/baseline/capture-reference-fixtures.mjs fetch",
+    "baseline:fixtures:verify": "node scripts/baseline/capture-reference-fixtures.mjs verify",
     "test:baseline": "node --test scripts/baseline/emerald-kaizo.test.mjs"
   }
 }
