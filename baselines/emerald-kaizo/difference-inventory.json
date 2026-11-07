@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "auditedOn": "2026-11-03",
+  "scope": "Original/unversioned Emerald Kaizo ordinary Singles; Emerald Kaizo 1.1, doubles, switch prediction, and AI prediction are excluded.",
+  "sources": {
+    "fork": {
+      "repository": "hzla/Dynamic-Calc",
+      "revision": "42b4cdc0f11de43ecabf3a5d2c1aba67e46e2f74"
+    },
+    "reference": {
+      "repository": "hzla/Dynamic-Calc-Decomps",
+      "revision": "883e9837e6281dd9d6963b935b6cda1dbe101293"
+    },
+    "trainerSource": {
+      "repository": "anastarawneh/pokemon-damage-calc",
+      "revision": "15ae28de8310f6442f1302f1709b0bf792d1e131"
+    }
+  },
+  "repositoryFileSummary": {
+    "roots": ["calc", "js", "backups"],
+    "forkOnly": 32,
+    "referenceOnly": 208,
+    "common": 83,
+    "commonChanged": 50
+  },
+  "files": [
+    { "source": "fork", "path": "backups/ek.js", "sha256": "820a347ea07d8a37eabf885fad2d113ebbeebad761f84eb95255a58b3e6d6ffe" },
+    { "source": "reference", "path": "backups/ek2.js", "sha256": "93b0732ccd62c434f4dac95f47e9f1c83412efc4c95326c75dbfc28f722d99c0" },
+    { "source": "trainerSource", "path": "src/js/data/sets/hacks/gen3/ek.js", "sha256": "98c70b8a60d4bc7ac3a8e9fe93c70df9c453157f384fa5c6f6c272d102ad387c" },
+    { "source": "fork", "path": "backups/title_to_backup_mappings.js", "sha256": "39156b971d9e1a8bca621748935375ed950eb45d79a73d78ddeec939c4ec114b" },
+    { "source": "reference", "path": "backups/title_to_backup_mappings.js", "sha256": "98e0cb1b5f6a26d676b7ee3de1e1e6cdf0282e943351c04ef3d10ba8f5c07ec7" },
+    { "source": "fork", "path": "calc/calc.js", "sha256": "a5d15c07ddc33918fee2abdea32c26ac680418284adbad31d8fa2ef531843744" },
+    { "source": "reference", "path": "calc/calc.js", "sha256": "437d799ac191b697498035a93805c1b9da49044ea6494fad6eba9b8f5682c93f" },
+    { "source": "fork", "path": "calc/field.js", "sha256": "b5bb63b89087ed5e8b7dc158ea57b44341538018678540c272c1706410c67edb" },
+    { "source": "reference", "path": "calc/field.js", "sha256": "bbc43d49fab976da7de43e98fee18959e69506281348c2d1e44a831e04eb4f7c" },
+    { "source": "fork", "path": "calc/pokemon.js", "sha256": "ccd654b2a553646c4ecd5fd8ed4937c4ede59a70f51eeb5a454178089eb1b4a3" },
+    { "source": "reference", "path": "calc/pokemon.js", "sha256": "15a504711adac47fd61a273fe0db64e7519bf9c5110b8308452bbb2dc88c5b4a" },
+    { "source": "fork", "path": "calc/move.js", "sha256": "9ed4ce982a428367931ac481fe5f8e43d623c4700b45cf96b3903389260e7741" },
+    { "source": "reference", "path": "calc/move.js", "sha256": "4ac08117467415b94df1c8b829a9892181f40dc08bdadb1fd91c0e219a0567a9" },
+    { "source": "fork", "path": "calc/result.js", "sha256": "d44420b003c6c7af2708170705e13fba7264d2eb84d09108132d9a0bc914cb37" },
+    { "source": "reference", "path": "calc/result.js", "sha256": "d963bc0cdc7a3fdebedad48587916d2c9968666b5665daf89d3332c8c551bedd" },
+    { "source": "fork", "path": "calc/desc.js", "sha256": "1b94824289e61222cb801c8b27ac7d2df7ed245befe624de5b7fb56c640e2d00" },
+    { "source": "reference", "path": "calc/desc.js", "sha256": "61fc811cb3f224e1792fefa7667a61aba9ff88d2ea6f33b8748ecbd3b787efaa" },
+    { "source": "fork", "path": "calc/mechanics/gen3.js", "sha256": "fe46128b9500e3ccb91caef9da5fbfaf6db022a3da1d9d0c9e055d842082d034" },
+    { "source": "reference", "path": "calc/mechanics/gen3.js", "sha256": "3b978905d6c7210abc00a7b6c7f6de817cd7d3a37ab9e522ce9778c829660469" },
+    { "source": "fork", "path": "calc/mechanics/util.js", "sha256": "731f668b55ded0f23784361482d3fac68fd627285f9e5fca3bb362be77ce9141" },
+    { "source": "reference", "path": "calc/mechanics/util.js", "sha256": "9c9bfdb644cbfd4dccaf808f3622ad3d0d0f0c87e86729a97d0e57b28fe07b7f" },
+    { "source": "fork", "path": "js/shared_controls.js", "sha256": "5322537978052a1fde16c1e2216eaeb90005eba7f31505f83fd580eaea4ff82b" },
+    { "source": "reference", "path": "js/shared_controls.js", "sha256": "4f954c574845f2aa1836337b68dc82aaac4b3e410531a32adb80d0ceffec5089" },
+    { "source": "fork", "path": "js/showdown_hooks.js", "sha256": "d6e8166bfda94df315c671c667a9e14ce3ebe4ad737ce5cb0502ada38fdc6e66" },
+    { "source": "reference", "path": "js/showdown_hooks.js", "sha256": "1e8b38e97c5fff317b2207258fc19964739b873660597689c2a6389815a85a06" },
+    { "source": "reference", "path": "js/initialize.js", "sha256": "2faf052c70c63522ddfdecc52cb84da32a01c96c8941aaba3ee6b4057c2f54b1" },
+    { "source": "reference", "path": "js/calc_ui/menu_settings.js", "sha256": "aaa5edd2d808bc279798d4cda654dace04341674a05d37a50a5022a3d062cd6e" },
+    { "source": "reference", "path": "js/calc_ui/switch_preview/g3.js", "sha256": "545d28ebc584f9da7f49246811c13950013921b4b82d2c69f3256bb7e82c97b5" }
+  ],
+  "findings": [
+    {
+      "id": "EK-AUDIT-01",
+      "category": "configuration",
+      "classification": "relevant",
+      "locations": ["backups/title_to_backup_mappings.js", "js/initialize.js:setGameSettings", "js/calc_ui/menu_settings.js"],
+      "difference": "The fork's legacy local mapping selects backups/ek.js and otherwise redirects Emerald Kaizo to the live Decomps site. The pinned reference resolves data=ek to backups/ek2.js and independently selects a Gen 8 base pool, Gen 3 damage/type/switch selectors, critGen 5, and a disabled physical/special split.",
+      "likelyEffect": "Using one generation switch or the legacy backup can select different species, moves, items, abilities, categories, critical behavior, or trainer identifiers before damage is calculated.",
+      "candidateFixtures": ["Assert the complete effective configuration before every calculation case", "Reject the legacy backups/ek.js and Emerald Kaizo 1.1 as fixture inputs"],
+      "evidenceNeeded": "Issue #4 must record the pinned effective settings with every fixture batch.",
+      "minimumAction": "Add an explicit Emerald Kaizo configuration/adapter boundary; do not copy all Decomps settings UI."
+    },
+    {
+      "id": "EK-AUDIT-02",
+      "category": "loaders-and-data",
+      "classification": "relevant",
+      "locations": ["js/shared_controls.js:loadPoksData/loadMovesData", "calc/data/species.js", "calc/data/moves.js", "calc/data/items.js", "calc/data/abilities.js", "calc/data/types.js"],
+      "difference": "The reference starts with its pinned Gen 8 species/items/abilities and separate Gen 9 move-picker/Gen 8 engine move tables, then overlays snapshot species and moves while retaining unspecified base metadata. The fork's tables and loader implementation differ substantially.",
+      "likelyEffect": "Base stats, types, abilities, move metadata, aliases, items, and type effectiveness can differ even when the trainer set text is the same. Return is forced to 102 BP, Magnitude to 70 BP, and Solar-Beam is aliased in the reference loader.",
+      "candidateFixtures": ["Azumarill / Guitarist Beth: Return", "Barboach / Team Aqua Grunt at Rusturf Tunnel: Magnitude", "A typed Hidden Power set plus a generic Hidden Power set"],
+      "evidenceNeeded": "Fixtures must use the verified output tables and assert resolved move/species values, not mutable browser globals.",
+      "minimumAction": "Consume the verified issue #2 dataset through an adapter; do not wholesale replace the inherited data modules."
+    },
+    {
+      "id": "EK-AUDIT-03",
+      "category": "trainer-sets",
+      "classification": "relevant",
+      "locations": ["backups/ek.js", "backups/ek2.js", "src/js/data/sets/hacks/gen3/ek.js"],
+      "difference": "The files differ in generated representation, identifiers, labels, and canonicalized move names, but the accepted normalization matches all 1,744 source trainer sets with no missing or extra entries.",
+      "likelyEffect": "Raw object keys are not interchangeable and trainer order is separate, but the normalized battle inputs are equivalent. Loading the wrong raw file can still break selection and provenance.",
+      "candidateFixtures": ["Leader Roxanne's level 14 Anorith", "Team Magma Grunt #2 at Mt. Chimney's level 36 Camerupt", "Ruin Maniac Bryan's level 30 Duskull"],
+      "evidenceNeeded": "Issue #4 must preserve full set identity and trainer-order provenance.",
+      "minimumAction": "Use the verified ek2-derived trainer data and order; no trainer-content reconciliation is needed."
+    },
+    {
+      "id": "EK-AUDIT-04",
+      "category": "calculation-dispatch",
+      "classification": "relevant",
+      "locations": ["calc/calc.js", "calc/pokemon.js", "calc/move.js", "calc/field.js"],
+      "difference": "The reference dispatches by the explicit game mechanics generation while retaining the separately selected data generation and carries itemOn plus additional field state through clones. The fork dispatch and constructors rely on different globals/defaults.",
+      "likelyEffect": "A calculation can silently run the wrong mechanics or lose an item/field toggle when cloned, producing different rolls from identical visible selections.",
+      "candidateFixtures": ["Same Pokémon and move with item enabled versus disabled", "Both attack directions using explicit clean Field objects"],
+      "evidenceNeeded": "Fixture inputs must explicitly state mechanics generation, data generation, item activation, and every field/side value.",
+      "minimumAction": "Introduce explicit adapter inputs and port only the clone/dispatch behavior demonstrated by fixtures."
+    },
+    {
+      "id": "EK-AUDIT-05",
+      "category": "gen3-core",
+      "classification": "relevant",
+      "locations": ["calc/move.js:getMoveCategory", "calc/mechanics/gen3.js:applyMoveCategoryADV/calculateAttackADV/calculateDefenseADV/calculateFinalModsADV"],
+      "difference": "The reference centralizes the optional physical/special split, includes Fairy in its special-type compatibility list, and separates base power, attack, defense, and final modifiers. It also supports Choice Specs, item activation, and reference-specific modifier sequencing absent or differently placed in the fork.",
+      "likelyEffect": "Attack/defense stat choice and floor order can change raw rolls for ordinary attacks, abilities, held items, boosts, badge modifiers, burn, screens, and critical hits.",
+      "candidateFixtures": ["Azumarill / Guitarist Beth: Huge Power Return", "A low-HP Blaze/Torrent/Overgrow/Swarm attacker", "Choice Band Castform / Camper Beau: Weather Ball", "Positive and negative attack/defense stages with and without a critical hit"],
+      "evidenceNeeded": "Issue #4 must record raw 16-roll arrays for each modifier boundary.",
+      "minimumAction": "Reconcile the narrow Gen 3 stages required by passing fixtures; do not import unrelated later-generation mechanics."
+    },
+    {
+      "id": "EK-AUDIT-06",
+      "category": "move-hooks",
+      "classification": "relevant",
+      "locations": ["calc/mechanics/gen3.js", "calc/mechanics/util.js"],
+      "difference": "The reference adds or changes Brick Break screen removal, Pain Split, Triple Kick/per-hit base power, multihit/stat-drop recomputation, legacy Beat Up support, Pursuit switching flags, Weather Ball categorization, starter-ability base-power timing, Explosion/Self-Destruct defense handling, and critical multiplier selection.",
+      "likelyEffect": "These paths can change damage, matrix shape, or whether a status move has a computed effect. The accepted trainers contain 128 Brick Break, 92 Explosion, 23 Self-Destruct, 18 Weather Ball, 13 Pursuit, and 4 Pain Split occurrences.",
+      "candidateFixtures": ["Anorith / Leader Roxanne: Brick Break into Reflect", "Camerupt / Team Magma Grunt #2 at Mt. Chimney: Explosion", "Castform / Camper Beau: Weather Ball in clear, sun, rain, and sand", "Crawdaunt / Pokémon Ranger Jackson: Pursuit with defender switching", "Duskull / Ruin Maniac Bryan: Pain Split"],
+      "evidenceNeeded": "Reference outputs plus targeted authoritative Gen 3/Emerald Kaizo evidence where the two calculators disagree.",
+      "minimumAction": "Port only hooks exercised by accepted fixtures and keep unsupported results explicit."
+    },
+    {
+      "id": "EK-AUDIT-07",
+      "category": "rounding-and-type-effectiveness",
+      "classification": "requires-investigation",
+      "locations": ["calc/mechanics/gen3.js:calculateADV", "calc/mechanics/util.js:getMoveEffectiveness", "calc/data/types.js"],
+      "difference": "The reference orders distinct defender types by a fixed precedence list and floors after applying each type multiplier; it also carries inverse/custom-chart context. The fork multiplies effectiveness before its final damage application and has different custom-type plumbing.",
+      "likelyEffect": "Dual-type targets can differ by one or more HP at rounding boundaries, and immunity/inverse behavior may diverge. Code inspection establishes a difference but not which behavior matches the game.",
+      "candidateFixtures": ["Neutral, 2x, 4x, 0.5x, 0.25x, and immunity dual-type cases with base damage near a floor boundary", "Foresight against Ghost", "Explicitly reject inverse mode from the initial support profile"],
+      "evidenceNeeded": "Capture pinned reference rolls and obtain an authoritative game result before declaring either implementation correct.",
+      "minimumAction": "Track mismatches individually; do not silently select the reference algorithm as game truth."
+    },
+    {
+      "id": "EK-AUDIT-08",
+      "category": "results-and-ko-text",
+      "classification": "relevant",
+      "locations": ["calc/result.js:damageRange/multiDamageRange", "calc/desc.js:normalizeMultihitDamage/getKOChance/computeKOChance"],
+      "difference": "The reference represents per-hit damage matrices and substantially revises range, recovery/recoil, end-of-turn, multihit normalization, and KO chance/description code.",
+      "likelyEffect": "Identical single-hit rolls may still yield different displayed ranges or knockout descriptions; multihit results can differ structurally.",
+      "candidateFixtures": ["Single-hit exact 2HKO boundary at full and partial current HP", "Double Kick as the accepted trainer multihit example", "Residual damage plus Leftovers", "Recoil and drain moves"],
+      "evidenceNeeded": "Issue #4 must record both raw rolls and exact pinned-reference KO descriptions, with presentation normalization documented separately.",
+      "minimumAction": "Reconcile structured result/description behavior only after raw-roll fixtures exist."
+    },
+    {
+      "id": "EK-AUDIT-09",
+      "category": "hidden-power",
+      "classification": "requires-investigation",
+      "locations": ["js/shared_controls.js:shouldUseEmeraldKaizoTypedHiddenPowerMove/correctHiddenPower", "calc/move.js"],
+      "difference": "The reference preserves EK's typed Hidden Power move-table entries while generic Hidden Power can derive type/power from IVs; correctHiddenPower returns the set unchanged. The fork's loader and correction paths differ.",
+      "likelyEffect": "A typed trainer move can be overwritten or calculated from IVs incorrectly. The accepted sets contain 229 typed Hidden Power entries and 2 generic entries.",
+      "candidateFixtures": ["Ampharos / Parasol Lady Daphne: Hidden Power Water", "Electabuzz / Expert Edgar: generic Hidden Power with explicit IVs", "Unown / Psychic Brandi: generic Hidden Power"],
+      "evidenceNeeded": "Record resolved move name, type, power, IVs, and raw rolls; verify the intended EK data convention independently.",
+      "minimumAction": "Preserve typed entries in the adapter and leave generic correction behind an explicit fixture."
+    },
+    {
+      "id": "EK-AUDIT-10",
+      "category": "battle-format",
+      "classification": "irrelevant-to-baseline",
+      "locations": ["calc/mechanics/gen3.js:calculateFinalModsADV", "calc/field.js"],
+      "difference": "The fork and reference differ in spread-move handling and carry different later-generation field flags.",
+      "likelyEffect": "Doubles/spread damage may differ, but neither issue #1 nor issue #2 established EK doubles or partner metadata.",
+      "candidateFixtures": ["None until doubles is separately scoped and evidenced"],
+      "evidenceNeeded": "A supported EK doubles scope, representative battle data, and reference fixtures.",
+      "minimumAction": "Exclude doubles and spread claims; do not port these differences for the initial Singles baseline."
+    },
+    {
+      "id": "EK-AUDIT-11",
+      "category": "prediction-and-save-hooks",
+      "classification": "irrelevant-to-baseline",
+      "locations": ["js/calc_ui/switch_preview/g3.js", "js/showdown_hooks.js", "js/savereaders/"],
+      "difference": "Decomps adds separate switch-preview, AI, save-reader, trainer-preview, and game-specific integration modules. EK exposes switch preview on a clean profile but no AI panel, partner metadata, or verified prediction behavior.",
+      "likelyEffect": "Import, party state, and predictions can change selected combatants or displayed recommendations, but they are not damage-engine parity evidence.",
+      "candidateFixtures": ["None for issue #4's initial ordinary Singles calculation set"],
+      "evidenceNeeded": "Separate product scope and game evidence before prediction or save integration is advertised.",
+      "minimumAction": "Do not port prediction/save subsystems as part of reconciliation."
+    },
+    {
+      "id": "EK-AUDIT-12",
+      "category": "unrelated-reference-growth",
+      "classification": "irrelevant-to-baseline",
+      "locations": ["calc/mechanics/gen4-switch.js", "calc/mechanics/romhacks/", "js/calc_ui/gen5_ai_reference.js", "backups/"],
+      "difference": "Most reference-only files support other hacks, later generations, AI previews, save formats, or developer tools; the repository-wide file lists contain 32 fork-only and 208 reference-only files under calc, js, and backups.",
+      "likelyEffect": "Wholesale replacement would expand scope, licensing review, regression risk, and unsupported behavior without establishing EK correctness.",
+      "candidateFixtures": ["None"],
+      "evidenceNeeded": "A separately accepted game or feature scope.",
+      "minimumAction": "Keep the fork parent and port no unrelated modules."
+    }
+  ]
+}
