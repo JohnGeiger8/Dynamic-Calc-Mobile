@@ -16,4 +16,6 @@ jobs:
       - run: npm run baseline:fetch
       - run: npm run baseline:verify
       - run: npm run test:baseline
+      - run: npm run baseline:fixtures:fetch
+      - run: npm run baseline:fixtures:verify
       - run: git diff --exit-code && git diff --check

@@ -274,3 +274,35 @@ Do not replace the calculation engine wholesale. Do not import unrelated Decomps
 [Issue #4](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/4) is the next dependency: it must define the schema and capture the candidate reference cases above. [Issue #3](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/3) remains blocked until those fixtures exist; this audit does not create a comparison runner or invent expected results.
 
 No standalone mechanics bug is filed from static disagreement alone. If an issue #4 case demonstrates a mismatch or authoritative evidence resolves one of `EK-AUDIT-07`/`EK-AUDIT-09`, create one focused follow-up per independently verifiable behavior and link its full battle inputs and reference result. This audit used no ROM, patch, save, game execution, or calculation-output fixture and therefore makes no damage, KO, prediction, or game-accuracy claim.
+
+## Pinned reference calculation fixtures (issue #4)
+
+- **Capture date:** 2026-11-07
+- **Status:** Proposed reference evidence for [issue #4](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/4) review; game accuracy remains unverified
+- **Fixture file:** [`reference-fixtures.json`](../../baselines/emerald-kaizo/reference-fixtures.json)
+- **Schema:** [`reference-fixtures.schema.json`](../../baselines/emerald-kaizo/reference-fixtures.schema.json)
+- **Capture:** [`capture-reference-fixtures.mjs`](../../scripts/baseline/capture-reference-fixtures.mjs)
+
+The version 1 schema requires a case ID, purpose, audit finding links, trainer-set provenance, explicit configuration identity, both Pokémon, move, field, raw damage, HP and percentage ranges, KO result when available, and an uncertainty field. Each Pokémon records species, level, nature, ability, item and activation, six IVs/EVs/boosts, status, current HP, all selected moves, and calculated stats. Each field records Singles, weather and terrain, all captured Field/Side defaults plus explicit switching state on both sides. The configuration hash points to the full [`configuration.json`](../../baselines/emerald-kaizo/configuration.json); the record also states Gen 3 mechanics, Gen 8 species/engine move data, the Gen 9 UI move picker, critical model 5, and disabled physical/special split.
+
+The 30 cases include both attack directions, the named Roxanne, Mt. Chimney, Beau, Jackson, Bryan, Beth, Rusturf Tunnel, Daphne, Edgar, Brandi, and Double Kick trainer sets; ordinary physical and special attacks; one status move; item activation, Huge Power, burn, boosts, critical hit, Reflect/Light Screen, partial HP, residual damage, weather, Pursuit switching, Explosion, Return and Magnitude overrides, typed and generic Hidden Power, multihit arrays, and dual-type neutral, 2×, 4×, ½×, ¼×, immunity, and Foresight targets. Synthetic opposing Pokémon are deliberately labeled by a null `trainerSet`; their complete values are recorded. These are pinned-reference examples, not claims about trainer battle pairings or in-game legality.
+
+### Reproduce the fixture capture
+
+Use Node.js 22.15.0 or later in a clean checkout. The first three commands verify issue #2's 26 locked files and outputs. The fixture fetch retrieves only three additional pinned reference modules (`calc/items.js`, `calc/result.js`, `calc/desc.js`) from the same commit and checks their SHA-256 before executing them. Both inherited license files remain in the ignored cache. No reference integration source is vendored.
+
+```sh
+npm run baseline:fetch
+npm run baseline:verify
+npm run test:baseline
+npm run baseline:fixtures:fetch
+npm run baseline:fixtures:verify
+```
+
+The last command recalculates all cases from the pinned reference and compares canonical JSON byte for byte with the committed fixture file. It does **not** execute the fork or implement issue #3's comparison runner. The capture uses the verified `data.json` hash, the pinned Gen 3 modules, explicit state, and the pinned UI loader's Return=102 and Magnitude=70 base-power overrides. Generic Hidden Power uses the pinned `Stats.getHiddenPower` function with explicit IVs; typed Hidden Power retains the selected move-table entry. Raw single-hit rolls are ordered by random factor 85–100; multihit results preserve one 16-roll array per hit. HP ranges come from the pinned Result API. Percentage ranges divide those HP values by the recorded defender maximum HP and round to one decimal; they are a documented derived convenience, not a claim about every browser display format. KO descriptions are exact `Result.kochance().text` values when supplied. `null` means unavailable or not established, not zero.
+
+### Uncertainty and exclusions
+
+The pinned Gen 3 function returns zero for Pain Split before reaching its later Pain Split hook. The fixture records that observed zero and leaves the status effect and KO description unresolved. `EK-AUDIT-07` type order/rounding and `EK-AUDIT-09` typed versus generic Hidden Power remain explicitly uncertain against the game even though reference rolls are recorded. The fixtures therefore allow later comparison with the fork but do not settle which calculator is correct. Reference output also does not prove that the synthetic opposing Pokémon or battle settings occur in Emerald Kaizo.
+
+The initial support profile remains ordinary Singles. Doubles/spread, switch prediction, AI, EK 1.1, ROMs, patches, and personal saves are outside this capture. No game execution or independently verified damage result was used. Issue #3 remains blocked until these fixtures are reviewed and accepted as usable reference cases; its fork comparison runner is separate work.
