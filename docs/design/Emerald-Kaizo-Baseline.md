@@ -324,7 +324,7 @@ The command retrieves any missing issue #2 inputs from their pinned commits, rej
 
 Raw damage arrays (including per-hit shape), HP and derived percentage ranges, and available KO chance, turn count, and description are compared exactly. Only whitespace runs in KO text are normalized as presentation; wording, probabilities, punctuation, and rolls remain significant. A missing KO result in the reference fixture is not asserted. Every case still runs and compares its raw result. The command prints case IDs, expected and actual values, and linked rationales, then exits nonzero for any mismatch, invalid fixture, missing data, execution error, or stale known-difference entry. The dedicated test suite also changes a copy of one expected roll, verifies the command fails with that case ID, and leaves the committed fixture untouched.
 
-At this comparison, 26 cases match and four differ; the command **intentionally exits with status 1**:
+At the initial issue #3 comparison, 26 cases matched and four differed; the command exited with status 1:
 
 | Case | Observed difference | Follow-up |
 | --- | --- | --- |
@@ -334,3 +334,16 @@ At this comparison, 26 cases match and four differ; the command **intentionally 
 | `EK4-19` | Return with Leftovers and Leech Seed: rolls match, KO chance and wording differ. | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6), `EK-AUDIT-08` |
 
 These are measured differences, not correctness decisions. Issue #6 must investigate each before a mechanics change. `EK-AUDIT-07` and `EK-AUDIT-09` remain uncertain against game evidence even where the fork happens to match the pinned reference. The runner establishes comparison behavior only; it does not validate the game, doubles, prediction, or the mobile interface.
+
+## Reconciliation of the four differences (issue #6)
+
+The fork now matches all 30 pinned reference cases. The discrepancy ledger is empty, and `npm run baseline:compare` exits successfully. The following decisions explain the changed behavior:
+
+| Case | Decision and evidence |
+| --- | --- |
+| `EK4-01` | Clear Reflect and Light Screen before Brick Break damage. The [Emerald Brick Break battle script](https://github.com/pret/pokeemerald/blob/master/data/battle_scripts_1.s) runs `removelightscreenreflect` before `damagecalc`; the [command implementation](https://github.com/pret/pokeemerald/blob/master/src/battle_script_commands.c) clears both screen flags. |
+| `EK4-08` | Double Pursuit's calculated damage after the base damage `+2`, rather than doubling an earlier intermediate value. The [switch battle script](https://github.com/pret/pokeemerald/blob/master/data/battle_scripts_1.s) sets the damage multiplier to two before `damagecalc`, and [the damage command](https://github.com/pret/pokeemerald/blob/master/src/battle_script_commands.c) applies it to the calculated base damage. This fixes the tested switching case; switch prediction remains outside the support boundary. |
+| `EK4-16` | Record two independent Double Kick hit-roll arrays and use their combined distribution for the KO description. The [Emerald double-hit script](https://github.com/pret/pokeemerald/blob/master/data/battle_scripts_1.s) repeats damage calculation per hit. This targeted correction does not assert parity for every multihit move or per-hit item/ability interaction. |
+| `EK4-19` | Count damaging end-of-turn effects when they finish a turn's KO, while end-of-turn healing cannot reverse a KO already dealt by an attack. With 54 current HP, minimum Return damage of 23 twice, and net 7 residual damage per turn (Leftovers +6, Leech Seed -13), the minimum two-turn sequence is lethal by the second turn's residual damage. The pinned reference uses this convention; the fixture's wording says "after Leftovers recovery and Leech Seed damage." |
+
+These corrections establish parity with the pinned reference for the recorded ordinary Singles cases. They do not establish game accuracy against an Emerald Kaizo ROM, broader multihit behavior, doubles, AI, or switch prediction. The audit's type-rounding and Hidden Power questions remain open pending independent game evidence.

@@ -81,6 +81,10 @@ function calculateADV(gen, attacker, defender, move, field) {
         desc.moveType = move.type;
         desc.moveBP = move.bp;
     }
+    if (move.named('Brick Break')) {
+        field.defenderSide.isReflect = false;
+        field.defenderSide.isLightScreen = false;
+    }
     var type1Effectiveness = (0, util_1.getMoveEffectiveness)(gen, move, defender.types[0], field.defenderSide.isForesight);
     var type2Effectiveness = defender.types[1]
         ? (0, util_1.getMoveEffectiveness)(gen, move, defender.types[1], field.defenderSide.isForesight)
@@ -265,10 +269,6 @@ function calculateADV(gen, attacker, defender, move, field) {
             desc.isLightScreen = true;
         }
     }
-    if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
-        baseDamage = Math.floor(baseDamage * 2);
-        desc.isSwitching = 'out';
-    }
     if (field.gameType !== 'Singles' && (move.target === 'allAdjacentFoes')) {
         if (gen >= 4) {
             baseDamage = Math.floor(baseDamage * 0.75);
@@ -297,6 +297,10 @@ function calculateADV(gen, attacker, defender, move, field) {
     if (isCritical) {
         baseDamage *= 2;
         desc.isCritical = true;
+    }
+    if (move.named('Pursuit') && field.defenderSide.isSwitching === 'out') {
+        baseDamage *= 2;
+        desc.isSwitching = 'out';
     }
     if (move.named('Weather Ball') && field.weather) {
         baseDamage *= 2;
@@ -332,6 +336,9 @@ function calculateADV(gen, attacker, defender, move, field) {
     result.damage = [];
     for (var i = 85; i <= 100; i++) {
         result.damage[i - 85] = Math.max(1, Math.floor((baseDamage * i) / 100));
+    }
+    if (move.named('Double Kick') && move.hits === 2) {
+        result.damage = [result.damage, result.damage.slice()];
     }
 
     return result;
