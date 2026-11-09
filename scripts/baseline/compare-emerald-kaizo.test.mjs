@@ -26,6 +26,9 @@ test('fixture schema rejects omitted inputs and invalid raw roll values', async 
 test('fork executes all cases and matches the pinned Emerald Kaizo reference', async () => {
   const report = await compareBaseline();
   assert.equal(report.results.length, 30);
+  for (const id of ['EK4-01', 'EK4-08', 'EK4-16', 'EK4-19']) {
+    assert.ok(report.results.some(result => result.id === id), `${id} remains a regression case`);
+  }
   const mismatches = report.results.filter(result => result.differences.length).map(result => result.id);
   assert.deepEqual(mismatches, []);
   assert.deepEqual(Object.keys(report.known.cases).sort(), mismatches);
