@@ -1,22 +1,5 @@
 {
   "schemaVersion": 1,
   "trackingIssue": "https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6",
-  "cases": {
-    "EK4-01": {
-      "auditFinding": "EK-AUDIT-06",
-      "rationale": "The fork applies Reflect to Brick Break; the pinned reference clears the screen before calculating damage. Raw rolls and KO text differ."
-    },
-    "EK4-08": {
-      "auditFinding": "EK-AUDIT-06",
-      "rationale": "The pinned reference doubles Pursuit damage when the defender is switching out; the fork's raw rolls remain lower."
-    },
-    "EK4-16": {
-      "auditFinding": "EK-AUDIT-08",
-      "rationale": "The reference records separate Double Kick rolls for each hit; the fork returns one hit's rolls and an approximate KO description."
-    },
-    "EK4-19": {
-      "auditFinding": "EK-AUDIT-08",
-      "rationale": "Raw Return rolls match, but the fork and reference differ on the Leftovers plus Leech Seed two-hit KO probability and text."
-    }
-  }
+  "cases": {}
 }

@@ -23,9 +23,12 @@ var util_2 = require("./mechanics/util");
 function display(gen, attacker, defender, move, field, damage, rawDesc, notation, err) {
     if (notation === void 0) { notation = '%'; }
     if (err === void 0) { err = true; }
-    var _a = __read((0, result_1.damageRange)(damage), 2), minDamage = _a[0], maxDamage = _a[1];
-    var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
-    var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
+    var isTwoHitMatrix = move.named('Double Kick') && Array.isArray(damage[0]);
+    var displayDamage = isTwoHitMatrix ? damage[0].map(function (roll, i) { return roll + damage[1][i]; }) : damage;
+    var _a = __read((0, result_1.damageRange)(displayDamage), 2), minDamage = _a[0], maxDamage = _a[1];
+    var multiplier = isTwoHitMatrix ? 1 : move.hits;
+    var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * multiplier;
+    var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * multiplier;
 
 
 
@@ -43,9 +46,12 @@ function display(gen, attacker, defender, move, field, damage, rawDesc, notation
 exports.display = display;
 function displayMove(gen, attacker, defender, move, damage, notation) {
     if (notation === void 0) { notation = '%'; }
-    var _a = __read((0, result_1.damageRange)(damage), 2), minDamage = _a[0], maxDamage = _a[1];
-    var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * move.hits;
-    var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * move.hits;
+    var isTwoHitMatrix = move.named('Double Kick') && Array.isArray(damage[0]);
+    var displayDamage = isTwoHitMatrix ? damage[0].map(function (roll, i) { return roll + damage[1][i]; }) : damage;
+    var _a = __read((0, result_1.damageRange)(displayDamage), 2), minDamage = _a[0], maxDamage = _a[1];
+    var multiplier = isTwoHitMatrix ? 1 : move.hits;
+    var min = (typeof minDamage === 'number' ? minDamage : minDamage[0] + minDamage[1]) * multiplier;
+    var max = (typeof maxDamage === 'number' ? maxDamage : maxDamage[0] + maxDamage[1]) * multiplier;
     var minDisplay = toDisplay(notation, min, defender.maxHP());
     var maxDisplay = toDisplay(notation, max, defender.maxHP());
     var recoveryText = getRecovery(gen, attacker, defender, move, damage, notation).text;
@@ -193,6 +199,7 @@ function getRecoil(gen, attacker, defender, move, damage, notation) {
 exports.getRecoil = getRecoil;
 function getKOChance(gen, attacker, defender, move, field, damage, err) {
     if (err === void 0) { err = true; }
+    var isTwoHitMatrix = move.named('Double Kick') && Array.isArray(damage[0]);
     damage = combine(damage);
     if (isNaN(damage[0])) {
         (0, util_1.error)(err, 'damage[0] must be a number.');
@@ -213,7 +220,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
     var eot = getEndOfTurn(gen, attacker, defender, move, field);
     var toxicCounter = defender.hasStatus('tox') && !defender.hasAbility('Magic Guard') ? defender.toxicCounter : 0;
     var qualifier = '';
-    if (move.hits > 1) {
+    if (move.hits > 1 && !isTwoHitMatrix) {
         qualifier = 'approx. ';
         damage = squashMultihit(gen, damage, move.hits, err);
     }
@@ -235,7 +242,7 @@ function getKOChance(gen, attacker, defender, move, field, damage, err) {
                 text: qualifier + Math.round(chance * 1000) / 10 + "% chance to OHKO".concat(hazardsText)
             };
         }
-        if (damage.length === 256) {
+        if (damage.length === 256 && !isTwoHitMatrix) {
             qualifier = 'approx. ';
         }
         for (var i = 2; i <= 4; i++) {
@@ -524,19 +531,21 @@ function getEndOfTurn(gen, attacker, defender, move, field) {
 }
 function computeKOChance(damage, hp, eot, hits, timesUsed, maxHP, toxicCounter) {
     var n = damage.length;
-    if (hits === 1) {
-        for (var i = 0; i < n; i++) {
-            if (damage[n - 1] < hp)
-                return 0;
-            if (damage[i] >= hp) {
-                return (n - i) / n;
-            }
-        }
-    }
     var toxicDamage = 0;
     if (toxicCounter > 0) {
         toxicDamage = Math.floor((toxicCounter * maxHP) / 16);
         toxicCounter++;
+    }
+    if (hits === 1) {
+        // Residual damage can finish a turn's KO, while recovery cannot undo a KO.
+        var finalResidual = Math.max(0, toxicDamage - eot);
+        for (var i = 0; i < n; i++) {
+            if (damage[n - 1] + finalResidual < hp)
+                return 0;
+            if (damage[i] + finalResidual >= hp) {
+                return (n - i) / n;
+            }
+        }
     }
     var sum = 0;
     var lastc = 0;
