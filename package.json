@@ -8,6 +8,8 @@
     "baseline:verify": "node scripts/baseline/emerald-kaizo.mjs verify",
     "baseline:fixtures:fetch": "node scripts/baseline/capture-reference-fixtures.mjs fetch",
     "baseline:fixtures:verify": "node scripts/baseline/capture-reference-fixtures.mjs verify",
+    "baseline:compare": "node scripts/baseline/compare-emerald-kaizo.mjs",
+    "test:comparison": "node --test scripts/baseline/compare-emerald-kaizo.test.mjs",
     "test:baseline": "node --test scripts/baseline/emerald-kaizo.test.mjs"
   }
 }

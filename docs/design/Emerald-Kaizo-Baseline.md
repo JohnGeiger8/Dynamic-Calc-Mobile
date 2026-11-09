@@ -306,3 +306,31 @@ The last command recalculates all cases from the pinned reference and compares c
 The pinned Gen 3 function returns zero for Pain Split before reaching its later Pain Split hook. The fixture records that observed zero and leaves the status effect and KO description unresolved. `EK-AUDIT-07` type order/rounding and `EK-AUDIT-09` typed versus generic Hidden Power remain explicitly uncertain against the game even though reference rolls are recorded. The fixtures therefore allow later comparison with the fork but do not settle which calculator is correct. Reference output also does not prove that the synthetic opposing Pokémon or battle settings occur in Emerald Kaizo.
 
 The initial support profile remains ordinary Singles. Doubles/spread, switch prediction, AI, EK 1.1, ROMs, patches, and personal saves are outside this capture. No game execution or independently verified damage result was used. Issue #3 remains blocked until these fixtures are reviewed and accepted as usable reference cases; its fork comparison runner is separate work.
+
+## Fork comparison runner (issue #3)
+
+- **Comparison date:** 2026-11-07
+- **Status:** Proposed runner and findings for [issue #3](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/3) review
+- **Runner:** [`compare-emerald-kaizo.mjs`](../../scripts/baseline/compare-emerald-kaizo.mjs)
+- **Known differences:** [`known-comparison-differences.json`](../../baselines/emerald-kaizo/known-comparison-differences.json)
+
+From a clean checkout with Node.js 22.15.0 or later, run one command:
+
+```sh
+npm run baseline:compare
+```
+
+The command retrieves any missing issue #2 inputs from their pinned commits, rejects missing or changed content, reproduces the verified data and configuration, validates the fixture schema and provenance, then executes all 30 cases through the fork's existing `calc/calc.js` Gen 3 dispatch. It passes the recorded Pokémon, move, and field inputs through an isolated adapter. That adapter supplies the selected Gen 8 data pool, Gen 3 mechanics and type chart, title, physical/special setting, and explicit move metadata; it maps `itemOn=false` to an unequipped item because the fork Pokémon constructor has no item activation option. The fork modules are read from the checkout, so this command detects changes to them. Later-generation dispatch imports are excluded from the isolated Gen 3 harness. No desktop UI or hidden browser state is consulted.
+
+Raw damage arrays (including per-hit shape), HP and derived percentage ranges, and available KO chance, turn count, and description are compared exactly. Only whitespace runs in KO text are normalized as presentation; wording, probabilities, punctuation, and rolls remain significant. A missing KO result in the reference fixture is not asserted. Every case still runs and compares its raw result. The command prints case IDs, expected and actual values, and linked rationales, then exits nonzero for any mismatch, invalid fixture, missing data, execution error, or stale known-difference entry. The dedicated test suite also changes a copy of one expected roll, verifies the command fails with that case ID, and leaves the committed fixture untouched.
+
+At this comparison, 26 cases match and four differ; the command **intentionally exits with status 1**:
+
+| Case | Observed difference | Follow-up |
+| --- | --- | --- |
+| `EK4-01` | Brick Break through Reflect: raw rolls, range, and KO differ. | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6), `EK-AUDIT-06` |
+| `EK4-08` | Pursuit during switching: raw rolls and range differ. | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6), `EK-AUDIT-06` |
+| `EK4-16` | Double Kick: the reference has two hit arrays while the fork has one; KO wording differs. | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6), `EK-AUDIT-08` |
+| `EK4-19` | Return with Leftovers and Leech Seed: rolls match, KO chance and wording differ. | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6), `EK-AUDIT-08` |
+
+These are measured differences, not correctness decisions. Issue #6 must investigate each before a mechanics change. `EK-AUDIT-07` and `EK-AUDIT-09` remain uncertain against game evidence even where the fork happens to match the pinned reference. The runner establishes comparison behavior only; it does not validate the game, doubles, prediction, or the mobile interface.
