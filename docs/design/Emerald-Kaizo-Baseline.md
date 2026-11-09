@@ -278,7 +278,7 @@ No standalone mechanics bug is filed from static disagreement alone. If an issue
 ## Pinned reference calculation fixtures (issue #4)
 
 - **Capture date:** 2026-11-07
-- **Status:** Proposed reference evidence for [issue #4](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/4) review; game accuracy remains unverified
+- **Status:** Merged reference evidence from [issue #4](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/4); game accuracy remains unverified
 - **Fixture file:** [`reference-fixtures.json`](../../baselines/emerald-kaizo/reference-fixtures.json)
 - **Schema:** [`reference-fixtures.schema.json`](../../baselines/emerald-kaizo/reference-fixtures.schema.json)
 - **Capture:** [`capture-reference-fixtures.mjs`](../../scripts/baseline/capture-reference-fixtures.mjs)
@@ -305,12 +305,12 @@ The last command recalculates all cases from the pinned reference and compares c
 
 The pinned Gen 3 function returns zero for Pain Split before reaching its later Pain Split hook. The fixture records that observed zero and leaves the status effect and KO description unresolved. `EK-AUDIT-07` type order/rounding and `EK-AUDIT-09` typed versus generic Hidden Power remain explicitly uncertain against the game even though reference rolls are recorded. The fixtures therefore allow later comparison with the fork but do not settle which calculator is correct. Reference output also does not prove that the synthetic opposing Pokémon or battle settings occur in Emerald Kaizo.
 
-The initial support profile remains ordinary Singles. Doubles/spread, switch prediction, AI, EK 1.1, ROMs, patches, and personal saves are outside this capture. No game execution or independently verified damage result was used. Issue #3 remains blocked until these fixtures are reviewed and accepted as usable reference cases; its fork comparison runner is separate work.
+The initial support profile remains ordinary Singles. Doubles/spread, switch prediction, AI, EK 1.1, ROMs, patches, and personal saves are outside this capture. No game execution or independently verified damage result was used. Issue #3 subsequently used these fixtures for the fork comparison runner.
 
 ## Fork comparison runner (issue #3)
 
 - **Comparison date:** 2026-11-07
-- **Status:** Proposed runner and findings for [issue #3](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/3) review
+- **Status:** Merged runner and initial findings from [issue #3](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/3); mismatches resolved in [issue #6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6)
 - **Runner:** [`compare-emerald-kaizo.mjs`](../../scripts/baseline/compare-emerald-kaizo.mjs)
 - **Known differences:** [`known-comparison-differences.json`](../../baselines/emerald-kaizo/known-comparison-differences.json)
 
@@ -333,7 +333,7 @@ At the initial issue #3 comparison, 26 cases matched and four differed; the comm
 | `EK4-16` | Double Kick: the reference has two hit arrays while the fork has one; KO wording differs. | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6), `EK-AUDIT-08` |
 | `EK4-19` | Return with Leftovers and Leech Seed: rolls match, KO chance and wording differ. | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6), `EK-AUDIT-08` |
 
-These are measured differences, not correctness decisions. Issue #6 must investigate each before a mechanics change. `EK-AUDIT-07` and `EK-AUDIT-09` remain uncertain against game evidence even where the fork happens to match the pinned reference. The runner establishes comparison behavior only; it does not validate the game, doubles, prediction, or the mobile interface.
+These were measured differences, not correctness decisions; issue #6 investigated and resolved them as described below. `EK-AUDIT-07` and `EK-AUDIT-09` remain uncertain against game evidence even where the fork matches the pinned reference. The runner establishes comparison behavior only; it does not validate the game, doubles, prediction, or the mobile interface.
 
 ## Reconciliation of the four differences (issue #6)
 

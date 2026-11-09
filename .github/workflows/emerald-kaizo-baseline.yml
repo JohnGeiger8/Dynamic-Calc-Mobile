@@ -3,6 +3,16 @@ on:
   push:
     branches: [master]
   pull_request:
+    paths:
+      - '.github/workflows/emerald-kaizo-baseline.yml'
+      - 'backups/**'
+      - 'baselines/emerald-kaizo/**'
+      - 'calc/**'
+      - 'js/**'
+      - 'scripts/baseline/**'
+      - 'package.json'
+      - 'docs/design/Emerald-Kaizo-Baseline.md'
+      - 'docs/design/Emerald-Kaizo-Baseline-Report.md'
 permissions:
   contents: read
 jobs:
@@ -19,4 +29,5 @@ jobs:
       - run: npm run baseline:fixtures:fetch
       - run: npm run baseline:fixtures:verify
       - run: npm run test:comparison
+      - run: npm run baseline:compare
       - run: git diff --exit-code && git diff --check
