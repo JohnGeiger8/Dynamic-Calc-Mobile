@@ -4,3 +4,8 @@
 /tools
 # Reproducibility inputs and derived data (not vendored)
 /.baseline-cache/
+# Local credentials and optional agent session logs
+.env
+.env.*
+!.env.example
+/.codex-log/

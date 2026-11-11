@@ -2,7 +2,7 @@
 ## UI design and Emerald Kaizo baseline
 
 Date: October 26, 2026  
-Status: Initial design specification; implementation and calculation validation are pending.  
+Status: Initial mobile design specification; implementation pending. The [separate Emerald Kaizo baseline report](Emerald-Kaizo-Baseline-Report.md) records completed reference comparisons and their limits.
 Direction: Approach 2 — a dedicated mobile web interface sharing the existing calculation engine and game data.  
 First game: Emerald Kaizo.  
 Repository: `JohnGeiger8/Dynamic-Calc-Mobile`, forked from `hzla/Dynamic-Calc`.

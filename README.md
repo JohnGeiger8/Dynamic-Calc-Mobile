@@ -95,6 +95,10 @@ Type a pokemon or move name to view it's info in the sidebar. Capitalizations do
 
 
 
+## Mobile fork development
+
+The mobile Battle prototype is planned; this repository currently retains the inherited desktop calculator. Start with the [documentation index](docs/README.md), then use [developer setup](docs/Developer-Setup.md) to reproduce the accepted Emerald Kaizo baseline. [Issue #23](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/23) establishes the development context; [issue #15](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/15) owns mobile UI stack selection.
+
 ## License
 
 This package is distributed under the terms of the MIT License.
