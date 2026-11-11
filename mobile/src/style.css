@@ -1,0 +1,26 @@
+:root { font-family: system-ui, -apple-system, sans-serif; color: #edf8f2; background: #101b19; font-size: 16px; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+ion-app { --ion-background-color: #101b19; --ion-text-color: #edf8f2; }
+.shell { min-height: 100dvh; display: flex; flex-direction: column; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+.header, main, footer { width: min(100%, 1000px); margin-inline: auto; }
+.header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 1rem; border-bottom: 1px solid #344b43; }
+h1, h2, h3, p { margin: 0; }
+h1 { font-size: 1.7rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1rem; }
+p { line-height: 1.5; }
+.eyebrow, .side { color: #83d8ad; font-size: .75rem; font-weight: 700; letter-spacing: .1em; }
+.game { border: 1px solid #477564; border-radius: 99px; padding: .4rem .65rem; font-size: .8rem; text-align: center; }
+main { flex: 1; padding: 1.5rem 1rem 2rem; }
+.intro { margin-bottom: 1.25rem; } .intro h2, .results h2 { margin: .35rem 0; } .intro > p:last-child, .results > p:last-child, .empty p { color: #c1d3c9; }
+.combatants { display: grid; gap: 1rem; }
+.card, .results { background: #1b2c27; border: 1px solid #385449; border-radius: 1rem; padding: 1.25rem; }
+.card h2 { margin: .35rem 0 1rem; }
+.empty { display: flex; gap: .85rem; align-items: center; padding: 1rem; border: 1px dashed #57766a; border-radius: .75rem; min-width: 0; }
+.empty-icon { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: #30483e; color: #a5e8c1; font-size: 1.5rem; }
+.empty p { margin-top: .25rem; } .results { margin-top: 1rem; }
+footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border-top: 1px solid #344b43; padding: .5rem 1rem; }
+footer span, footer a, button { min-height: 44px; display: inline-flex; align-items: center; }
+footer span { color: #8ce5b3; font-weight: 700; } a { color: #b7f5d0; } button { padding: .6rem 1rem; border: 1px solid #83d8ad; border-radius: .5rem; background: #1b2c27; color: #edf8f2; font: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.state { padding: max(2rem, env(safe-area-inset-top)) 1rem; } .state p { margin: 1rem 0; }
+@media (min-width: 600px) { .combatants { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

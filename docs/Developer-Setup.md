@@ -23,6 +23,22 @@ For local desktop preview, serve the repository root over HTTP, for example `pyt
 
 A local Node installation and pinned fetches are sufficient for this repository's present baseline gate. A container or cloud environment would add image maintenance, network, and tool-access requirements without resolving a demonstrated reproducibility gap. Reconsider only after a concrete local/CI mismatch or mobile build requirement is recorded in an issue; seek maintainer approval before committing infrastructure.
 
+## Mobile Battle shell
+
+With Node 22.15.0 and npm 10.9.2, run from the repository root:
+
+```sh
+npm ci --prefix mobile --ignore-scripts --no-audit --no-fund
+npm run dev --prefix mobile
+npm run build --prefix mobile
+npm run check:build --prefix mobile
+npm run preview --prefix mobile
+```
+
+Development is at `http://127.0.0.1:5173/Dynamic-Calc-Mobile/mobile/`; the built preview uses port 4173. The mobile build outputs `mobile/dist/`. For a production static site, preserve the repository's desktop files at the site root and copy the **contents** of `mobile/dist/` into its `mobile/` directory, so the desktop remains at `/Dynamic-Calc-Mobile/index.html` and Battle at `/Dynamic-Calc-Mobile/mobile/`. Vite preview serves the mobile output alone; the desktop link requires that combined site. This is a build recipe, not a deployment.
+
+The shell does not load game data or Mastersheet; selection and calculations are later work. The build check enforces prefixed entry assets, absence of Mastersheet-named content, and a 1,500,000-byte main JS ceiling. The current Ionic entry is approximately 1.31 MB minified / 287 KB gzip, so the budget is a regression guard, not a performance target. Reassess it when the adapter and real interactions arrive. Browser network inspection is still needed alongside this static check.
+
 ## Validation by change
 
 | Change | Run now | Evidence to report |
@@ -30,7 +46,7 @@ A local Node installation and pinned fetches are sufficient for this repository'
 | Docs, instructions, setup, or workflow text | `npm run check:docs`; `git diff --check` | Link/path check and rendered Markdown review; identify external links inspected. |
 | Baseline scripts, `baselines/`, `calc/`, game-data or mechanics in `js/`/`backups/` | Full baseline sequence below | Test counts, 30-case result, changed roll/KO details and mismatch behavior. Add relevant `calc/` tests for engine changes. |
 | Inherited desktop UI | Relevant Cypress/browser interaction plus baseline sequence if mechanics/data are touched | Browser, viewport, actions, screenshots or observations; do not claim mobile acceptance. |
-| Future mobile UI | Its issue-specific build/typecheck/component and viewport/device checks after #15/#16 define them | iPhone interaction and accessibility evidence; there is no current mobile build/typecheck gate. |
+| Mobile UI | `npm run build --prefix mobile`; `npm run check:build --prefix mobile`; relevant browser viewport/device checks | Build size, startup requests, interaction and accessibility evidence; distinguish emulation from physical iPhone. |
 
 The full current CI-equivalent baseline sequence, from the root, is:
 
