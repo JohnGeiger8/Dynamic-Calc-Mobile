@@ -24,3 +24,13 @@ footer span { color: #8ce5b3; font-weight: 700; } a { color: #b7f5d0; } button {
 :focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .state { padding: max(2rem, env(safe-area-inset-top)) 1rem; } .state p { margin: 1rem 0; }
 @media (min-width: 600px) { .combatants { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.card button { margin-top: 1rem; } .summary { overflow-wrap:anywhere; } .summary p { margin-top:.4rem; }
+.overlay { position:fixed; inset:0; z-index:10; background:#000a; display:flex; align-items:end; justify-content:center; }
+.editor { background:#1b2c27; width:min(100%,700px); max-height:95dvh; display:flex; flex-direction:column; border-radius:1rem 1rem 0 0; padding:1rem; padding-bottom:max(1rem,env(safe-area-inset-bottom)); }
+.editor header, .editor footer { display:flex; justify-content:space-between; gap:.5rem; padding:.5rem 0; } .editor-body { overflow-y:auto; overscroll-behavior:contain; padding:.5rem .25rem 2rem; }
+.tabs { display:flex; overflow-x:auto; gap:.35rem; } .tabs button[aria-pressed=true] { background:#477564; }
+.editor label { display:grid; gap:.35rem; margin:.8rem 0; } input, select { width:100%; min-height:44px; font:inherit; color:inherit; background:#101b19; border:1px solid #78988b; border-radius:.4rem; padding:.5rem; }
+.editor .check { display:flex; align-items:center; } .check input { width:1.25rem; min-height:1.25rem; } .choices { max-height:12rem; overflow:auto; border:1px solid #78988b; } .choices button { display:block; width:100%; text-align:left; border:0; border-radius:0; } .choices p { padding:.5rem; } .stat { display:grid; grid-template-columns:3rem 1fr 1fr; align-items:center; gap:.5rem; } .error { color:#ffb8a8; }
+.choices button { overflow-wrap:anywhere; white-space:normal; } .editor input[aria-invalid=true] { border-color:#ffb8a8; }
+.tabs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); } .tabs button { justify-content:center; } .editor-body { min-height:0; }
+.editor > header, .editor > footer, .tabs { flex-shrink:0; }
