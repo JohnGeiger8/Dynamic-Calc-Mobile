@@ -8,7 +8,11 @@
     "preview": "vite preview --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "build": "npm run typecheck && vite build",
-    "check:build": "node scripts/check-build.mjs"
+    "check:build": "node scripts/check-build.mjs",
+    "predev": "npm run prepare:adapter",
+    "prebuild": "npm run prepare:adapter",
+    "prepare:adapter": "node scripts/prepare-adapter.mjs",
+    "test:browser": "npm run prepare:adapter && node scripts/test-browser.mjs"
   },
   "dependencies": {
     "@ionic/react": "9.0.11",

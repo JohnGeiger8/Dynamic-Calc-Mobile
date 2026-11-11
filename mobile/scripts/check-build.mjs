@@ -12,8 +12,10 @@ for (const file of assets) {
     assert(!/mastersheet/i.test(content), `unexpected Mastersheet content: ${file}`);
   }
 }
-const entry = urls.find(url => url.endsWith('.js'));
-assert(entry, 'missing entry script');
-const bytes = (await stat(`dist/${entry.split('/').slice(-2).join('/')}`)).size;
-assert(bytes < 1_500_000, `entry script exceeds 1.5 MB budget: ${bytes}`);
-console.log(`Subpath and Mastersheet checks passed; entry script ${bytes} bytes (budget 1,500,000).`);
+const entries = urls.filter(url => url.endsWith('.js'));
+assert(entries.length, 'missing entry scripts');
+assert(entries.every(url => !/adapter-|engine-/.test(url)), 'adapter or engine loaded at startup');
+const sizes = await Promise.all(entries.map(url => stat(`dist/${url.split('/').slice(-2).join('/')}`).then(info => info.size)));
+const bytes = sizes.reduce((sum, size) => sum + size, 0);
+assert(bytes < 1_500_000, `startup scripts exceed 1.5 MB budget: ${bytes}`);
+console.log(`Subpath and Mastersheet checks passed; startup scripts ${bytes} bytes (budget 1,500,000).`);

@@ -2,9 +2,9 @@ name: Mobile build
 on:
   push:
     branches: [master]
-    paths: ['mobile/**', '.github/workflows/mobile.yml']
+    paths: ['mobile/**', 'calc/**', 'baselines/emerald-kaizo/**', 'scripts/baseline/**', '.github/workflows/mobile.yml']
   pull_request:
-    paths: ['mobile/**', '.github/workflows/mobile.yml']
+    paths: ['mobile/**', 'calc/**', 'baselines/emerald-kaizo/**', 'scripts/baseline/**', '.github/workflows/mobile.yml']
 permissions:
   contents: read
 jobs:
@@ -20,6 +20,9 @@ jobs:
           node-version: '22.15.0'
           cache: npm
           cache-dependency-path: mobile/package-lock.json
+      - run: npm run baseline:fetch
+        working-directory: .
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npm run build
       - run: npm run check:build
+      - run: npm run test:browser
