@@ -1,7 +1,7 @@
 # Emerald Kaizo baseline report
 
 - **Date:** 2026-11-08
-- **Status:** Proposed for [issue #7](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/7) review
+- **Status:** Accepted via [issue #7](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/7) and merged [PR #14](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/14) on 2026-11-09
 - **Goal:** State the reproducible Emerald Kaizo calculation baseline, its evidence and limits, and the procedure for keeping it accurate.
 - **Scope:** The pinned original/unversioned Emerald Kaizo data and ordinary Singles damage comparisons. This report does not certify game accuracy against a ROM or release the mobile interface.
 
@@ -60,14 +60,14 @@ npm run baseline:compare
 | [#4](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/4) | [PR #11](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/11) | Complete inputs and pinned results for 30 cases |
 | [#5](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/5) | [PR #10](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/10) | Difference inventory and minimum reconciliation candidates |
 | [#6](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/6) | [PR #13](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/13) | Resolved four mismatches; comparison passes |
-| [#7](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/7) | [PR #14](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/14), pending review | This report and the CI comparison gate |
+| [#7](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/7) | [PR #14](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/14), merged | This report and the CI comparison gate |
 
-Issues #1–#6 are closed as completed and their listed PRs are merged. Issue #7 remains open for review and final milestone sign-off. A merged calculation baseline does **not** mean the mobile interface or public website has been deployed.
+Issues #1–#7 are closed as completed and their listed PRs are merged. This records baseline acceptance; it does **not** mean the mobile interface or public website has been deployed.
 
 **Outside validated support:** Emerald Kaizo 1.1; ROM or patch accuracy; doubles, spread and partner effects; switch-in or AI prediction; general multihit and per-hit item/ability interactions; Pain Split's status effect; and the audit's game-level type-rounding and Hidden Power questions. The existing desktop or future mobile UI must not present these as validated. A later issue must supply independent game evidence and fixtures before expanding the support claim.
 
 ## Open questions and validation
 
-An authoritative Emerald Kaizo release or patch identifier and independent game calculations would strengthen the baseline. The audit's unresolved type-rounding and Hidden Power questions remain documented in the [baseline record](Emerald-Kaizo-Baseline.md#uncertainty-and-exclusions). For this report, validate internal links, the clean reproduction commands, the deliberate-mismatch failure, and the PR's CI result before accepting issue #7.
+An authoritative Emerald Kaizo release or patch identifier and independent game calculations would strengthen the baseline. The audit's unresolved type-rounding and Hidden Power questions remain documented in the [baseline record](Emerald-Kaizo-Baseline.md#uncertainty-and-exclusions). The issue #7 review required internal links, clean reproduction commands, the deliberate-mismatch failure, and the PR's CI result.
 
-Local validation on 2026-11-08: `baseline:fixtures:verify` reproduced all 30 pinned cases; `test:baseline` passed six tests; `test:comparison` passed three; and `baseline:compare` reported 30 matches, zero mismatches, and zero stale annotations. A temporary copy of case `EK4-03` with one expected roll changed made `baseline:compare -- --fixtures <temporary-file>` exit 1 and report that case's raw-damage difference. The temporary file was removed, and the committed fixture was not edited. Local Markdown targets in this report and both documentation indexes exist, and `git diff --check` passed. The initial [PR #14 clean-checkout CI run](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/actions/runs/42559715097) passed, including the new `baseline:compare` step. Its final commit must also pass CI before review is complete.
+Local validation on 2026-11-08: `baseline:fixtures:verify` reproduced all 30 pinned cases; `test:baseline` passed six tests; `test:comparison` passed three; and `baseline:compare` reported 30 matches, zero mismatches, and zero stale annotations. A temporary copy of case `EK4-03` with one expected roll changed made `baseline:compare -- --fixtures <temporary-file>` exit 1 and report that case's raw-damage difference. The temporary file was removed, and the committed fixture was not edited. Local Markdown targets in this report and both documentation indexes exist, and `git diff --check` passed. The initial [PR #14 clean-checkout CI run](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/actions/runs/42559715097) passed, including the new `baseline:compare` step.

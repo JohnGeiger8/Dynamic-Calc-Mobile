@@ -83,25 +83,29 @@ Close duplicates, declined proposals, or obsolete issues as not planned, with a 
 
 ## Milestones and release scope
 
-Start with three milestones; create them when release work is broken into issues:
+The accepted roadmap in [UI Design](design/UI-Design.md#9-milestones) is staged as follows. GitHub milestone names and issue placement are the live release record; do not infer completion from this outline.
 
-1. **Emerald Kaizo Baseline** — identify and pin the game configuration, reconcile the original fork with the current linked reference, and record reproducible calculation comparisons.
-2. **Battle Prototype** — complete one mobile matchup flow: Pokémon selection, HP editing, damage comparison, and field conditions.
-3. **Community Beta** — add Box, Trainers, Settings, portable sessions, contributor guidance, and a verified shareable build.
+1. **0 — Emerald Kaizo baseline** — pin the original/unversioned game inputs and reference, reconcile supported calculations, and publish reproducible evidence. [Issue #7](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/7) and [PR #14](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/14) completed this stage.
+2. **1 — Battle prototype** — establish the development context in [#23](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/23), then choose a UI stack in #15 and complete one mobile matchup flow through the scoped Battle issues.
+3. **2 — Usable release** — Box/import, Trainers, Settings, and portable sessions.
+4. **3 — Installable/offline web app** — explicit download/update handling after a validated online flow.
+5. **4 — Expansion** — additional validated games and optional packaging, each with its own evidence.
 
 Assign an issue to a milestone only when it is intended for that release. Do not invent deadlines or use completion percentage as a measure of engineering effort. Move unfinished work deliberately rather than closing it to finish a milestone. Later offline/PWA and multi-game work stays in Backlog until scoped.
 
 ## Implementation, review, and completion
 
-1. Pick a Ready issue, assign an owner, and move it to In progress.
+1. Pick a Ready issue, assign an owner, and move it to In progress. Create a brief from the issue's goal, scope, references, and acceptance evidence; use a written plan when dependencies or risks make it useful.
 2. Create a descriptive branch such as `feature/12-hp-editor` or `docs/18-workflow`.
-3. Make a focused change. Update the linked design if intended behavior changes.
-4. Open a PR describing the problem, resulting behavior, linked issue, and verification. Use `Closes #N` for an issue fully resolved by the PR; use `Refs #N` for partial work.
+3. Make a focused change. Update the linked design if intended behavior changes. Keep source changes and generated output distinguishable, preserve unrelated work, and review the diff before handoff.
+4. Open a PR describing the problem, resulting behavior, linked issue, design references, and verification. Use `Closes #N` for an issue fully resolved by the PR; use `Refs #N` for partial work. Include exact commands and outcomes, environment versions, unresolved risks, and the next review action. Keep a fresh-session handoff in the issue/PR, not a committed chat transcript or parallel task tracker.
 5. Move the issue to In review when evidence is ready. Use screenshots for relevant UI changes and meaningful calculation comparisons for engine/data changes.
-6. Verify acceptance criteria and required checks. Solo review is allowed; do not claim independent review occurred. Community contributions receive maintainer review.
+6. Verify acceptance criteria and required checks. Self-review is allowed while solo; label it accurately and do not claim independent review occurred. Community contributions receive maintainer review. A fresh agent should be able to recover context from the issue, PR, repository guides, and current diff without earlier chat history.
 7. Merge, confirm the linked issue closes, and set Done. Documentation-only tasks use link/render review; investigations attach findings and decisions rather than requiring a code change.
 
 Done means the agreed work is accepted, not necessarily published. Track publication in a release issue or release notes with the app version and data revision. A merged PR alone does not mean the website has deployed successfully. Known limitations and deferred work should be linked explicitly.
+
+For concurrent work, each agent owns a separate branch/worktree and a nonoverlapping file scope. Agree on integration ownership before overlapping edits. The integrator reviews the combined diff and reruns affected checks after changes meet. Delegation is optional; it does not relax issue ownership, review, or merge rules.
 
 ## Automation rules
 
@@ -121,13 +125,13 @@ The Project is linked to the repository and currently private to its authorized 
 
 Automatic status changes on issue closure, PR linking, and PR merging are disabled. Review, completion, and reopened-issue triage are manual for now. This avoids treating declined issues as delivered work or advancing a task simply because a PR was linked. Enable additional rules only after checking their behavior against this guide.
 
-The label taxonomy and milestone definitions in this guide are documented conventions; creating the full label catalog, milestones, issue forms, and development backlog is separate setup work. No implementation tasks are implied to be complete by the empty board.
+This paragraph records the initial configuration as of October 27. Check the live Project and repository before relying on it; the label catalog, milestones, and baseline work have since been populated. No automation rule should be inferred from a documented convention.
 
 ## Design document conventions
 
 Keep product/UI designs, mechanics baseline plans, and architecture decisions in `docs/design/`. Use descriptive names such as `UI-Design.md` or `Emerald-Kaizo-Baseline.md` and list them in the design index. Each new design should include status, date, goal, scope, decisions, open questions, and validation expectations. Mark proposed behavior clearly; merge into the design only after the maintainer accepts it. Link implementation issues instead of duplicating their live status.
 
-Current design: [UI Design and Emerald Kaizo baseline](design/UI-Design.md). Its implementation and calculation comparisons remain pending until the corresponding work is completed.
+Current references: [UI Design](design/UI-Design.md) states intended mobile behavior, while the [Emerald Kaizo baseline report](design/Emerald-Kaizo-Baseline-Report.md) records the completed 30-case reference comparison and its limits. The mobile implementation remains pending.
 
 ## Community growth and maintenance
 
