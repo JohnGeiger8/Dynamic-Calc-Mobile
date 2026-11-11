@@ -11,10 +11,11 @@ This is a navigation map, not a task tracker. Read [Development Workflow](Develo
 | `scripts/baseline/` | Pinned fetch, offline verify, reference capture, audit, comparison, and tests | Follow [baseline instructions](../scripts/baseline/AGENTS.md). The comparison is the calculation gate. |
 | `.baseline-cache/` | Ignored, retrieved upstream inputs and derived verification output | Regenerate via scripts; do not edit, commit, or use as a source of truth. |
 | `.github/workflows/emerald-kaizo-baseline.yml` | Current CI gate | Runs pinned fetch, verify, tests, and 30 comparisons on `master` pushes and relevant PR paths. It does not cover every future UI path. |
+| `mobile/` | Ionic React Battle entry point and separate Vite build | Keep mobile styles and state isolated from desktop and mechanics; #17 owns the calculation adapter. |
 | `cypress/` | Inherited desktop browser tests and fixtures | These are not the Battle prototype acceptance suite. Some fixtures are save files; avoid exposing private user saves. |
 | `docs/design/` | Product intent, accepted baseline decisions, dated evidence | [UI Design](design/UI-Design.md) describes future mobile behavior; [baseline report](design/Emerald-Kaizo-Baseline-Report.md) records current supported calculation scope. |
 
-The first mobile entry point and its component boundary are planned in [issue #16](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/16); [issue #15](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/15) owns stack selection. No mobile directory or build gate exists yet. The current browser preview is the inherited desktop calculator.
+The mobile shell and build gate live in `mobile/`; [issue #17](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/17) owns the browser calculation adapter. The inherited desktop entry remains at the repository root.
 
 ## Which source is authoritative?
 

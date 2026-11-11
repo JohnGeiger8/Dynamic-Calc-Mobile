@@ -2,15 +2,15 @@
 
 Date: November 11, 2026
 
-Status: **Proposed for maintainer acceptance** under [issue #15](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/15). This document records a recommendation and prototype evidence, not an accepted production stack or a completed Battle UI.
+Status: **Accepted** under [issue #15](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/15), completed after [PR #25](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/pull/25) merged. The prototype evidence below is historical; it is not a completed Battle UI.
 
 ## Goal and scope
 
 Choose a maintainable React-based mobile UI stack for the [Battle interaction and iPhone requirements](UI-Design.md#4-battle-screen). Compare Ionic React, Framework7 React, and Konsta UI, starting with Ionic. The focused [prototype](../../prototypes/ionic-battle/README.md) exercises two combatant cards, searchable selection, and an HP sheet. It uses sample identities and values; calculation integration, saved state, Box, Trainers, Settings, and the production mobile entry point remain in issues #17, #18–#22, #16, and the later usable-release work respectively. The inherited desktop page and accepted [Emerald Kaizo baseline](Emerald-Kaizo-Baseline-Report.md) are unchanged.
 
-## Proposed decision
+## Accepted decision
 
-**Use Ionic React 9 with React 19, TypeScript, and Vite for the first Battle implementation, subject to maintainer acceptance.** Ionic supplies a tested modal/searchbar path and theming without adding a second utility-CSS system. The measured initial bundle is large, so #16 should split routes/components and set a reviewed size budget after a representative production shell exists. Keep the adapter in #17 independent of Ionic types so this UI choice does not shape mechanics contracts. Do not add Capacitor, an Ionic account, a paid service, or native packaging for the web prototype.
+**Use Ionic React 9 with React 19, TypeScript, and Vite for the first Battle implementation.** Ionic supplies a tested modal/searchbar path and theming without adding a second utility-CSS system. The measured initial bundle is large, so #16 should split routes/components and set a reviewed size budget after a representative production shell exists. Keep the adapter in #17 independent of Ionic types so this UI choice does not shape mechanics contracts. Do not add Capacitor, an Ionic account, a paid service, or native packaging for the web prototype.
 
 The [UI Design information architecture](UI-Design.md#3-information-architecture) specifies persistent navigation for the usable app. The investigation prototype has **only Battle**; it shows no links to unfinished destinations. Issue #16 should keep the first shell similarly honest. Add labeled Box, Trainers, and Settings destinations when their flows exist, while preserving the active matchup and per-tab context as the design requires. This staging does not change the intended final navigation.
 
@@ -43,7 +43,7 @@ The [prototype CI workflow](../../.github/workflows/ui-stack-prototype.yml) inst
 
 Open for maintainer review:
 
-1. Accept or reject the proposed Ionic React/TypeScript/Vite stack after reviewing the large initial bundle and the unmeasured alternative builds. If rejected, prototype the preferred alternative before #16 implements a shell.
+1. Monitor the production shell bundle as features are added; alternative builds were not measured in this investigation.
 2. On a physical iPhone, check Safari portrait/landscape safe areas, on-screen keyboard with picker/HP sheet actions visible, system text enlargement, and VoiceOver labels/focus order. Chrome viewport emulation does not establish those results.
 3. In #17, demonstrate real browser calculation parity for the pinned Emerald Kaizo configuration. This module bundle smoke check is intentionally narrower.
 4. In #16, decide a production chunk budget and CI build gate after the representative shell and adapter boundary exist.
