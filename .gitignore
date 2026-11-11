@@ -1,4 +1,6 @@
 /node_modules
+/prototypes/ionic-battle/node_modules/
+/prototypes/ionic-battle/dist/
 /cypress/downloads
 /cypress/screenshots
 /tools
