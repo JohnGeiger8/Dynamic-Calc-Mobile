@@ -15,6 +15,23 @@ for (const fixture of fixtures.cases) {
     if (normalize(actual.ko?.description) !== normalize(expected.ko.description)) differences.push(`${fixture.id} ko.description: ${actual.ko?.description} != ${expected.ko.description}`);
   }
 }
+// Active factors come from the engine's description, not from merely selected inputs.
+const sceptile = structuredClone(fixtures.cases[21].inputs) as Parameters<BattleAdapter['calculate']>[0];
+sceptile.attacker = {...sceptile.attacker, species:'Sceptile', level:100, nature:'Lax', ability:'Overgrow', item:'Miracle Seed', itemOn:true, currentHp:1, moves:['Leaf Blade']};
+sceptile.move = {name:'Leaf Blade', type:'Grass', basePower:95, critical:false, hits:1};
+const setup = await adapter.load();
+const gen = {num:3, species:{get:(id:string)=>setup.data.speciesById[id]}, natures:{get:(id:string)=>Object.entries(setup.data.natures).find(([name])=>name.toLowerCase()===id)?.[1]}};
+const maxHp = new setup.engine.Pokemon(gen, 'Sceptile', {level:100, nature:'Lax', ivs:sceptile.attacker.ivs, evs:sceptile.attacker.evs}).stats.hp as number;
+sceptile.attacker.currentHp=maxHp;
+const full = await adapter.calculate(sceptile);
+sceptile.attacker.currentHp=Math.floor(maxHp/4);
+sceptile.attacker.nature='Modest';
+const low = await adapter.calculate(sceptile);
+if(full.status!=='success' || low.status!=='success') differences.push('Sceptile factor fixture failed');
+else {
+  if(!full.value.attackerDescription.includes('31 SpA IV') || !full.value.attackerDescription.includes('@Miracle Seed') || full.value.attackerDescription.includes('Overgrow')) differences.push('Inactive Overgrow or active Miracle Seed description incorrect');
+  if(!low.value.attackerDescription.includes('Overgrow') || !low.value.attackerDescription.includes('@Miracle Seed')) differences.push('Active Overgrow description incorrect');
+}
 const broken = await new BattleAdapter('/missing-ek-data').calculate(fixtures.cases[0].inputs as Parameters<BattleAdapter['calculate']>[0]);
 if (broken.status !== 'error') differences.push('Missing data did not return error');
 const corrupted = await new BattleAdapter(`${import.meta.env.BASE_URL}index.html`).calculate(fixtures.cases[0].inputs as Parameters<BattleAdapter['calculate']>[0]);

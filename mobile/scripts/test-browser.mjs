@@ -15,8 +15,10 @@ try {
     await new Promise(resolve => setTimeout(resolve, 100));
   }
   if (!ready) throw new Error(`Vite did not start (exit ${server.exitCode})`);
-  const {stdout} = await promisify(execFile)(chrome, ['--headless', '--disable-gpu', '--no-first-run', `--user-data-dir=${profile}`, '--virtual-time-budget=15000', '--dump-dom', 'http://127.0.0.1:4177/Dynamic-Calc-Mobile/mobile/test/fixtures.html'], {timeout:30000, maxBuffer: 2_000_000});
-  const result = stdout.match(/<pre id="result">([\s\S]*?)<\/pre>/)?.[1];
-  if (!result?.startsWith('PASS 30 cases')) throw new Error(`Browser fixture failure: ${result || 'no result'}`);
-  console.log(result);
+  for (const [page, expected] of [['fixtures.html','PASS 30 cases'], ['results.html','PASS rendered pinned cases']]) {
+    const {stdout} = await promisify(execFile)(chrome, ['--headless', '--disable-gpu', '--no-first-run', `--user-data-dir=${profile}`, '--virtual-time-budget=15000', '--dump-dom', `http://127.0.0.1:4177/Dynamic-Calc-Mobile/mobile/test/${page}`], {timeout:30000, maxBuffer: 2_000_000});
+    const result = stdout.match(/<pre id="result">([\s\S]*?)<\/pre>/)?.[1];
+    if (!result?.startsWith(expected)) throw new Error(`Browser ${page} failure: ${result || 'no result'}`);
+    console.log(result);
+  }
 } finally { server.kill(); await rm(profile, {recursive:true, force:true}); }

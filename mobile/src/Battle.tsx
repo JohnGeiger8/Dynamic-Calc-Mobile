@@ -1,9 +1,10 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { BattleAdapter, PokemonInput, Stats } from './adapter';
+import { ResultsPanel } from './ResultsPanel';
 
-type Runtime = Awaited<ReturnType<BattleAdapter['load']>>;
-type Side = 'your' | 'opponent';
-type Combatant = PokemonInput & { critical: boolean[] };
+export type Runtime = Awaited<ReturnType<BattleAdapter['load']>>;
+export type Side = 'your' | 'opponent';
+export type Combatant = PokemonInput & { critical: boolean[] };
 const keys = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'] as const;
 const stats = (n: number): Stats => ({hp:n, atk:n, def:n, spa:n, spd:n, spe:n});
 const empty = (): Combatant => ({species:'', level:100, nature:'Hardy', ability:'', item:'', itemOn:true, ivs:stats(31), evs:stats(0), boosts:stats(0), status:'', currentHp:1, moves:['','','',''], critical:[false,false,false,false]});
@@ -81,7 +82,7 @@ export default function Battle() {
   const edit=(side:Side)=>{adapter.current?.invalidate();setEditing(side);if(!runtime&&!loading)void load();};
   return <div className="shell"><header className="header"><div><p className="eyebrow">DYNAMIC CALC</p><h1>Battle</h1></div><span className="game">Emerald Kaizo</span></header><main id="main"><div className="intro"><p className="eyebrow">MATCHUP</p><h2>Set up your battle</h2><p>Choose both Pokémon to compare their moves.</p></div>
     <div className="combatants">{(['your','opponent'] as const).map(side=>{const p=sides[side];return <section className="card" key={side}><p className="side">{side==='your'?'YOUR SIDE':'OPPOSING SIDE'}</p><h2>{side==='your'?'Your Pokémon':'Opponent'}</h2>{p&&runtime?<div className="summary"><h3>{p.species}</h3><p>Level {p.level} · {statusNames[p.status]||'No status'}</p><button className="hp-trigger" aria-label={`Edit ${side==='your'?'your Pokémon':'opponent'} HP, ${p.currentHp} of ${maximumHp(p,runtime)}`} onClick={e=>{hpTrigger.current=e.currentTarget;adapter.current?.invalidate();setEditingHp(side);}}>HP {p.currentHp}/{maximumHp(p,runtime)}</button><p>Ability: {p.ability||'None'} · Item: {p.item||'None'}{p.item&&!p.itemOn?' (inactive)':''}</p></div>:<p>No Pokémon selected.</p>}<button onClick={()=>edit(side)}>{p?'Edit':'Select Pokémon'}</button></section>})}</div>
-    <section className="results" aria-labelledby="results-heading"><p className="eyebrow">RESULTS</p><h2 id="results-heading">Damage comparison</h2><p>{editing||editingHp?'Results unavailable while editing.':!sides.your||!sides.opponent?'Select both Pokémon to compare.':sides.your.currentHp===0||sides.opponent.currentHp===0?'Calculations are unavailable at zero HP.':'Damage comparison is not available yet.'}</p></section></main><footer><span aria-current="page">Battle</span><a href="../index.html">Desktop calculator</a></footer>
+    <ResultsPanel sides={sides} runtime={runtime} adapter={adapter.current} editing={!!(editing || editingHp)}/></main><footer><span aria-current="page">Battle</span><a href="../index.html">Desktop calculator</a></footer>
     {editing&&!runtime&&<div className="overlay"><section className="editor" role="dialog" aria-modal="true" aria-label="Emerald Kaizo data"><p role={error?'alert':'status'}>{loading?'Loading verified Emerald Kaizo data…':`Emerald Kaizo data could not load: ${error}`}</p>{error&&<button onClick={()=>void load()}>Retry</button>}<button onClick={()=>setEditing(undefined)}>Cancel</button></section></div>}
     {editingHp&&runtime&&sides[editingHp]&&<HpEditor side={editingHp} current={sides[editingHp]!.currentHp} max={maximumHp(sides[editingHp]!,runtime)} onCancel={()=>setEditingHp(undefined)} onDone={hp=>{adapter.current?.invalidate();setSides(old=>({...old,[editingHp]:{...old[editingHp]!,currentHp:hp}}));setEditingHp(undefined);}}/>}
     {editing&&runtime&&<Editor key={editing} initial={sides[editing]} runtime={runtime} side={editing} onCancel={()=>setEditing(undefined)} onDone={p=>{setSides(s=>({...s,[editing]:p}));setEditing(undefined);}}/>}</div>;

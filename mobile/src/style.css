@@ -36,3 +36,7 @@ footer span { color: #8ce5b3; font-weight: 700; } a { color: #b7f5d0; } button {
 .editor > header, .editor > footer, .tabs { flex-shrink:0; }
 .hp-trigger { margin-top:.4rem !important; } .hp-modes { display:flex; gap:.5rem; flex-wrap:wrap; margin:.75rem 0; } .hp-modes button[aria-pressed=true] { background:#477564; }
 .hp-editor .editor-body { overflow-y:auto; } .hp-editor #hp-help { margin-top:.5rem; } .hp-editor .error:empty { display:none; }
+.directions { display:flex; gap:.5rem; flex-wrap:wrap; margin:1rem 0; } .directions button[aria-pressed=true] { background:#477564; }
+.result-row { border-top:1px solid #385449; padding:.8rem 0; overflow-wrap:anywhere; } .result-row p { margin-top:.3rem; } .result-row summary { cursor:pointer; padding:.5rem 0; } .opposing { border-top:1px solid #385449; padding-top:.8rem; }
+/* Ionic's app host is absolutely positioned; make long Battle screens scrollable. */
+ion-app { overflow-y:auto; }
