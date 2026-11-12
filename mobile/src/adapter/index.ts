@@ -9,7 +9,7 @@ export type FieldInput = { gameType: 'Singles'; weather: string | null; terrain:
 export type BattleInput = { attacker: PokemonInput; defender: PokemonInput; move: MoveInput; field: FieldInput; configuration: { dataset: string; configurationSha256: string; mechanicsGeneration: number; dataGeneration: number } };
 export type Calculation = { rawDamage: number | number[] | number[][]; rangeHp: [number, number]; rangePercent: [number, number]; ko: { chance: number | null; turns: number | null; description: string | null } | null; koError: string | null; attackerStats: Stats; defenderStats: Stats };
 export type Outcome = { status: 'success'; value: Calculation; identity: typeof identity } | { status: 'unsupported' | 'error' | 'stale'; message: string };
-export type Data = { dataset: string; speciesById: Record<string, unknown>; movesById: Record<string, unknown>; items: string[]; abilities: string[]; typeChart: Record<string, unknown>; natures: Record<string, unknown> };
+export type Data = { dataset: string; speciesById: Record<string, unknown>; movesById: Record<string, unknown>; items: string[]; abilities: string[]; observedAbilities: Record<string,string[]>; typeChart: Record<string, unknown>; natures: Record<string, unknown> };
 type Engine = typeof import('../generated/engine.js');
 
 const supportedSide = new Set(['spikes', 'isSR', 'isReflect', 'isLightScreen', 'isSeeded', 'isSwitching', 'isForesight']);
