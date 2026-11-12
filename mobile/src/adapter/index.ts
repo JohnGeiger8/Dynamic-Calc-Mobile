@@ -7,7 +7,7 @@ export type MoveInput = { name: string; type: string; basePower: number; critica
 export type SideInput = { spikes?: number; isSR?: boolean; isReflect?: boolean; isLightScreen?: boolean; isSeeded?: boolean; isSwitching?: boolean | string; [key: string]: boolean | number | string | undefined };
 export type FieldInput = { gameType: 'Singles'; weather: string | null; terrain: null; attackerSide: SideInput; defenderSide: SideInput; [key: string]: unknown };
 export type BattleInput = { attacker: PokemonInput; defender: PokemonInput; move: MoveInput; field: FieldInput; configuration: { dataset: string; configurationSha256: string; mechanicsGeneration: number; dataGeneration: number } };
-export type Calculation = { rawDamage: number | number[] | number[][]; rangeHp: [number, number]; rangePercent: [number, number]; ko: { chance: number | null; turns: number | null; description: string | null } | null; koError: string | null; attackerStats: Stats; defenderStats: Stats };
+export type Calculation = { rawDamage: number | number[] | number[][]; rangeHp: [number, number]; rangePercent: [number, number]; ko: { chance: number | null; turns: number | null; description: string | null } | null; koError: string | null; attackerStats: Stats; defenderStats: Stats; attackerDescription: string; engineDescription: string };
 export type Outcome = { status: 'success'; value: Calculation; identity: typeof identity } | { status: 'unsupported' | 'error' | 'stale'; message: string };
 export type Data = { dataset: string; speciesById: Record<string, unknown>; movesById: Record<string, unknown>; items: string[]; abilities: string[]; observedAbilities: Record<string,string[]>; typeChart: Record<string, unknown>; natures: Record<string, unknown> };
 type Engine = typeof import('../generated/engine.js');
@@ -68,9 +68,21 @@ export class BattleAdapter {
       const result = calculate(gen, a, d, move, new Field(input.field));
       let ko = null, koError = null;
       try { const k = result.kochance(); if (k) ko = {chance:k.chance ?? null, turns:k.n ?? null, description:k.text ?? null}; } catch (error) { koError = error instanceof Error ? error.message : String(error); }
+      const desc = result.rawDesc as {attackerAbility?:string; attackerItem?:string; attackEVs?:string; attackBoost?:number; isBurned?:boolean};
+      const stat = result.move.category === 'Physical' ? 'atk' : 'spa';
+      const statLabel = stat === 'atk' ? 'Atk' : 'SpA';
+      const notes = desc.attackEVs ? [`${input.attacker.ivs[stat]} ${statLabel} IV`] : [];
+      if (desc.attackEVs && input.attacker.evs[stat]) notes.push(`${input.attacker.evs[stat]} ${statLabel} EV`);
+      const natureSign = desc.attackEVs?.match(/^\d+([+-]) /)?.[1];
+      if (natureSign) notes.push(`${natureSign}${statLabel} Nature`);
+      if (desc.attackBoost) notes.push(`${desc.attackBoost > 0 ? '+' : ''}${desc.attackBoost} ${statLabel} stage`);
+      if (desc.isBurned) notes.push('Burned');
+      const attackerDescription = [`Level ${input.attacker.level}`, desc.attackerAbility, input.attacker.species].filter(Boolean).join(' ') + (notes.length ? ` (${notes.join(', ')})` : '') + (desc.attackerItem ? ` @${desc.attackerItem}` : '');
+      let engineDescription = '';
+      try { engineDescription = result.fullDesc('%', false); } catch { /* Description is optional; preserve the damage result. */ }
       const rangeHp: [number, number] = result.range();
       const rangePercent = rangeHp.map(hp => Math.round(1000 * hp / d.stats.hp) / 10) as [number, number];
-      return {status:'success', identity, value:{rawDamage:result.damage, rangeHp, rangePercent, ko, koError, attackerStats:a.stats, defenderStats:d.stats}};
+      return {status:'success', identity, value:{rawDamage:result.damage, rangeHp, rangePercent, ko, koError, attackerStats:a.stats, defenderStats:d.stats, attackerDescription, engineDescription}};
     } catch (error) { return sequence !== this.sequence ? stale() : {status:'error', message:error instanceof Error ? error.message : String(error)}; }
   }
 }

@@ -54,13 +54,19 @@ export function ResultsPanel({sides, runtime, adapter, editing}:Props) {
   const available=!editing&&results?.version===version ? results : undefined;
   const opposing=available?.opponent.filter(r=>r.outcome?.status==='success') || [];
   const maximum=opposing.reduce<Row | undefined>((best,row)=>!best || (row.outcome?.status==='success' && best.outcome?.status==='success' && row.outcome.value.rangePercent[1]>best.outcome.value.rangePercent[1])?row:best,undefined);
+  const natureWarning=runtime && [sides.your,sides.opponent].some(p=>{
+    if (!p) return false;
+    const nature=runtime.data.natures[p.nature];
+    return Array.isArray(nature) && nature[0]!==nature[1];
+  });
   const unavailable=editing?'Results unavailable while editing.':!sides.your||!sides.opponent?'Select both Pokémon to compare.':sides.your.currentHp===0||sides.opponent.currentHp===0?'Calculations are unavailable at zero HP.':'Calculating results…';
   return <section className="results" aria-labelledby="results-heading"><p className="eyebrow">RESULTS</p><h2 id="results-heading">Damage comparison</h2>
     <nav className="directions" aria-label="Attack direction">{(['your','opponent'] as const).map(side=><button key={side} aria-pressed={direction===side} onClick={()=>setDirection(side)}>{side==='your'?'Your attacks':'Opponent attacks'}</button>)}</nav>
+    {natureWarning && <p className="error">Nature stat modifiers are not currently applied by this calculator.</p>}
     {!available?<p role="status">{unavailable}</p>:<><div className="result-list">{available[direction].map((row,i)=><article className="result-row" key={i}>
       <h3>{row.name || `Move ${i+1}: empty`}{row.type && ` · ${row.type}`}</h3>
       {row.label?<p>{row.label}</p>:row.outcome?.status==='success'?<><p>{row.outcome.value.rangePercent.join('–')}% of target maximum HP · {row.outcome.value.ko?.description || 'KO description unavailable'}</p>
-        <details><summary>Damage details</summary><p>Damage: {row.outcome.value.rangeHp.join('–')} HP. Rolls: {JSON.stringify(row.outcome.value.rawDamage)}.</p><p>Critical setting: {row.critical?'Yes':'No'}. Singles; clear weather; no screens or hazards. KO description uses current HP.</p>{row.outcome.value.koError&&<p>KO details unavailable: {row.outcome.value.koError}</p>}</details></>:<p>{row.outcome?.status==='unsupported'?'Unsupported':'Calculation unavailable'}: {row.outcome?.message}</p>}
+        <details><summary>Damage details</summary><p>{row.outcome.value.attackerDescription}</p><p>Damage: {row.outcome.value.rangeHp.join('–')} HP. Rolls: {JSON.stringify(row.outcome.value.rawDamage)}.</p><p>{row.outcome.value.engineDescription}</p><p>Critical setting: {row.critical?'Yes':'No'}. Singles; clear weather; no screens or hazards. KO description uses current HP.</p>{row.outcome.value.koError&&<p>KO details unavailable: {row.outcome.value.koError}</p>}</details></>:<p>{row.outcome?.status==='unsupported'?'Unsupported':'Calculation unavailable'}: {row.outcome?.message}</p>}
     </article>)}</div>{direction==='your'&&<p className="opposing">Maximum calculated opposing damage among displayed damaging moves: {maximum?.outcome?.status==='success'?`${maximum.name} — ${maximum.outcome.value.rangePercent[1]}% of your maximum HP`:'unavailable'}. {opposing.length<available.opponent.filter(r=>r.name && !r.label?.startsWith('Status')).length?'Some moves could not be calculated.':''}</p>}</>}
   </section>;
 }
