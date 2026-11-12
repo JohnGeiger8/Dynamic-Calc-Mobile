@@ -47,3 +47,5 @@ Open for maintainer review:
 2. On a physical iPhone, check Safari portrait/landscape safe areas, on-screen keyboard with picker/HP sheet actions visible, system text enlargement, and VoiceOver labels/focus order. Chrome viewport emulation does not establish those results.
 3. In #17, demonstrate real browser calculation parity for the pinned Emerald Kaizo configuration. This module bundle smoke check is intentionally narrower.
 4. In #16, decide a production chunk budget and CI build gate after the representative shell and adapter boundary exist.
+
+The dedicated HP editor accepts exact whole HP or a percentage from 0 to 100. Percentage entry converts to the nearest whole HP, with half values rounded up. Selecting a different species sets current HP to its maximum; selecting the same species retains current HP. Stat changes retain exact HP; if the new maximum is lower, the combatant editor requires correction before saving. Zero is retained in state but calculations remain unavailable because the inherited engine treats zero as full HP. Damage presentation and direction switching remain in #20.

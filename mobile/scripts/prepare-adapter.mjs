@@ -13,6 +13,11 @@ if (hash(configuration) !== manifest.outputs['effective-settings.json']) throw n
 const source = JSON.parse(bytes);
 // Trainer and Mastersheet content is not needed for calculations.
 const data = Object.fromEntries(['dataset', 'speciesById', 'movesById', 'items', 'abilities', 'typeChart', 'natures'].map(k => [k, source[k]]));
+// Retain only distinct, recognized ability names observed in the pinned trainer sets.
+// These are suggestions, not a complete or ordered list of legal ability slots.
+const toID = s => s.toLowerCase().replace(/[^a-z0-9]/g, '');
+const abilityNames = new Map(source.abilities.map(name => [toID(name), name]));
+data.observedAbilities = Object.fromEntries(Object.entries(source.trainerSets).map(([species, sets]) => [toID(species), [...new Set(Object.values(sets).map(set => abilityNames.get(toID(set.ability || ''))).filter(Boolean))]]).filter(([, abilities]) => abilities.length));
 const payload = JSON.stringify(data);
 await mkdir(new URL('../public/ek/', import.meta.url), { recursive: true });
 await mkdir(new URL('../src/generated/', import.meta.url), { recursive: true });
