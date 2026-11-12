@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { BattleAdapter, PokemonInput, Stats } from './adapter';
 
 type Runtime = Awaited<ReturnType<BattleAdapter['load']>>;
@@ -49,16 +49,37 @@ function Editor({initial,runtime,side,onCancel,onDone}:{initial?:Combatant;runti
     {attempt&&!valid&&<p role="alert" className="error">Choose a species and enter valid values: level 1–100, HP 0–maximum, IVs 0–31, EVs 0–255, boosts −6–6. Finish any search by selecting a choice.</p>}</div><footer><button onClick={()=>{setAttempt(true);if(valid)onDone(p);}}>Done</button></footer></section></div>;
 }
 
+function HpEditor({side, current, max, onCancel, onDone}:{side:Side;current:number;max:number;onCancel:()=>void;onDone:(hp:number)=>void}) {
+  const dialog=useRef<HTMLElement>(null);
+  const [mode,setMode]=useState<'hp'|'percent'>('hp');
+  const [value,setValue]=useState(String(current));
+  const [attempt,setAttempt]=useState(false);
+  useEffect(()=>{dialog.current?.querySelector<HTMLInputElement>('input')?.focus(); },[]);
+  const number=Number(value);
+  const valid=value.trim()!=='' && /^(?:\d+(?:\.\d*)?|\.\d+)$/.test(value) && Number.isFinite(number) && number>=0 && number<=(mode==='hp'?max:100) && (mode==='percent'||Number.isInteger(number));
+  const hp=valid ? (mode==='hp'?number:Math.round(number*max/100)) : null;
+  const switchMode=(next:'hp'|'percent')=>{if(next===mode)return; if(hp!==null) setValue(next==='hp'?String(hp):String(hp/max*100)); else setValue(''); setMode(next);setAttempt(false);};
+  return <div className="overlay"><section ref={dialog} className="editor hp-editor" role="dialog" aria-modal="true" aria-labelledby="hp-title" onKeyDown={e=>{if(e.key==='Escape'){e.preventDefault();onCancel();} if(e.key==='Tab'){const controls=Array.from(dialog.current?.querySelectorAll<HTMLElement>('button:not([disabled]), input:not([disabled])')||[]);if(e.shiftKey&&document.activeElement===controls[0]){e.preventDefault();controls.at(-1)?.focus();}else if(!e.shiftKey&&document.activeElement===controls.at(-1)){e.preventDefault();controls[0]?.focus();}}}}>
+    <header><h2 id="hp-title">Edit {side==='your'?'your Pokémon':'opponent'} HP</h2><button onClick={()=>onCancel()}>Cancel</button></header>
+    <div className="editor-body"><p>Current HP: {current} / {max}</p><div className="hp-modes" aria-label="HP entry mode"><button type="button" aria-pressed={mode==='hp'} onClick={()=>switchMode('hp')}>Exact HP</button><button type="button" aria-pressed={mode==='percent'} onClick={()=>switchMode('percent')}>Percentage</button></div>
+    <label htmlFor="hp-value">{mode==='hp'?'Current HP':'Current HP percentage'}</label><input id="hp-value" type="text" inputMode={mode==='hp'?'numeric':'decimal'} value={value} aria-invalid={!valid} aria-describedby="hp-help hp-error" onChange={e=>setValue(e.target.value)} onFocus={e=>e.currentTarget.scrollIntoView({block:'nearest'})}/>
+    <p id="hp-help">{mode==='hp'?`Enter a whole number from 0 to ${max}.`:'Enter 0 to 100. Percentages are rounded to the nearest whole HP; halves round up.'} Zero HP makes calculations unavailable.</p>
+    <p id="hp-error" className="error" aria-live="polite">{!valid&&(attempt||value!==String(current))?(mode==='hp'?`Enter a whole number from 0 to ${max}.`:'Enter a number from 0 to 100.'):''}</p>{valid&&mode==='percent'&&<p>Will save {hp} / {max} HP.</p>}</div>
+    <footer><button onClick={()=>{setAttempt(true);if(hp!==null)onDone(hp);}}>Done</button></footer></section></div>;
+}
+
 export default function Battle() {
-  const adapter=useRef<BattleAdapter | null>(null);
+  const adapter=useRef<BattleAdapter | null>(null); const hpTrigger=useRef<HTMLElement | null>(null);
   const [runtime,setRuntime]=useState<Runtime>(); const [error,setError]=useState(''); const [loading,setLoading]=useState(false);
-  const [sides,setSides]=useState<Partial<Record<Side,Combatant>>>({}); const [editing,setEditing]=useState<Side>();
+  const [sides,setSides]=useState<Partial<Record<Side,Combatant>>>({}); const [editing,setEditing]=useState<Side>(); const [editingHp,setEditingHp]=useState<Side>();
   const load=async()=>{setError('');setLoading(true);try {const {BattleAdapter}=await import('./adapter'); adapter.current ||= new BattleAdapter(); setRuntime(await adapter.current.load());} catch(e){setError(e instanceof Error?e.message:String(e));} finally {setLoading(false);}};
   useEffect(()=>()=>adapter.current?.invalidate(),[]);
+  useLayoutEffect(()=>{if(!editingHp && hpTrigger.current){hpTrigger.current.focus();hpTrigger.current=null;}},[editingHp]);
   const edit=(side:Side)=>{adapter.current?.invalidate();setEditing(side);if(!runtime&&!loading)void load();};
   return <div className="shell"><header className="header"><div><p className="eyebrow">DYNAMIC CALC</p><h1>Battle</h1></div><span className="game">Emerald Kaizo</span></header><main id="main"><div className="intro"><p className="eyebrow">MATCHUP</p><h2>Set up your battle</h2><p>Choose both Pokémon to compare their moves.</p></div>
-    <div className="combatants">{(['your','opponent'] as const).map(side=>{const p=sides[side];return <section className="card" key={side}><p className="side">{side==='your'?'YOUR SIDE':'OPPOSING SIDE'}</p><h2>{side==='your'?'Your Pokémon':'Opponent'}</h2>{p&&runtime?<div className="summary"><h3>{p.species}</h3><p>Level {p.level} · HP {p.currentHp}/{maximumHp(p,runtime)} · {statusNames[p.status]||'No status'}</p><p>Ability: {p.ability||'None'} · Item: {p.item||'None'}{p.item&&!p.itemOn?' (inactive)':''}</p></div>:<p>No Pokémon selected.</p>}<button onClick={()=>edit(side)}>{p?'Edit':'Select Pokémon'}</button></section>})}</div>
-    <section className="results" aria-labelledby="results-heading"><p className="eyebrow">RESULTS</p><h2 id="results-heading">Damage comparison</h2><p>{editing?'Results unavailable while editing.':!sides.your||!sides.opponent?'Select both Pokémon to compare.':sides.your.currentHp===0||sides.opponent.currentHp===0?'Calculations are unavailable at zero HP.':'Damage comparison is not available yet.'}</p></section></main><footer><span aria-current="page">Battle</span><a href="../index.html">Desktop calculator</a></footer>
+    <div className="combatants">{(['your','opponent'] as const).map(side=>{const p=sides[side];return <section className="card" key={side}><p className="side">{side==='your'?'YOUR SIDE':'OPPOSING SIDE'}</p><h2>{side==='your'?'Your Pokémon':'Opponent'}</h2>{p&&runtime?<div className="summary"><h3>{p.species}</h3><p>Level {p.level} · {statusNames[p.status]||'No status'}</p><button className="hp-trigger" aria-label={`Edit ${side==='your'?'your Pokémon':'opponent'} HP, ${p.currentHp} of ${maximumHp(p,runtime)}`} onClick={e=>{hpTrigger.current=e.currentTarget;adapter.current?.invalidate();setEditingHp(side);}}>HP {p.currentHp}/{maximumHp(p,runtime)}</button><p>Ability: {p.ability||'None'} · Item: {p.item||'None'}{p.item&&!p.itemOn?' (inactive)':''}</p></div>:<p>No Pokémon selected.</p>}<button onClick={()=>edit(side)}>{p?'Edit':'Select Pokémon'}</button></section>})}</div>
+    <section className="results" aria-labelledby="results-heading"><p className="eyebrow">RESULTS</p><h2 id="results-heading">Damage comparison</h2><p>{editing||editingHp?'Results unavailable while editing.':!sides.your||!sides.opponent?'Select both Pokémon to compare.':sides.your.currentHp===0||sides.opponent.currentHp===0?'Calculations are unavailable at zero HP.':'Damage comparison is not available yet.'}</p></section></main><footer><span aria-current="page">Battle</span><a href="../index.html">Desktop calculator</a></footer>
     {editing&&!runtime&&<div className="overlay"><section className="editor" role="dialog" aria-modal="true" aria-label="Emerald Kaizo data"><p role={error?'alert':'status'}>{loading?'Loading verified Emerald Kaizo data…':`Emerald Kaizo data could not load: ${error}`}</p>{error&&<button onClick={()=>void load()}>Retry</button>}<button onClick={()=>setEditing(undefined)}>Cancel</button></section></div>}
+    {editingHp&&runtime&&sides[editingHp]&&<HpEditor side={editingHp} current={sides[editingHp]!.currentHp} max={maximumHp(sides[editingHp]!,runtime)} onCancel={()=>setEditingHp(undefined)} onDone={hp=>{adapter.current?.invalidate();setSides(old=>({...old,[editingHp]:{...old[editingHp]!,currentHp:hp}}));setEditingHp(undefined);}}/>}
     {editing&&runtime&&<Editor key={editing} initial={sides[editing]} runtime={runtime} side={editing} onCancel={()=>setEditing(undefined)} onDone={p=>{setSides(s=>({...s,[editing]:p}));setEditing(undefined);}}/>}</div>;
 }
