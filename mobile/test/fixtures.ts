@@ -20,7 +20,7 @@ const sceptile = structuredClone(fixtures.cases[21].inputs) as Parameters<Battle
 sceptile.attacker = {...sceptile.attacker, species:'Sceptile', level:100, nature:'Lax', ability:'Overgrow', item:'Miracle Seed', itemOn:true, currentHp:1, moves:['Leaf Blade']};
 sceptile.move = {name:'Leaf Blade', type:'Grass', basePower:95, critical:false, hits:1};
 const setup = await adapter.load();
-const gen = {num:3, species:{get:(id:string)=>setup.data.speciesById[id]}, natures:{get:(id:string)=>Object.entries(setup.data.natures).find(([name])=>name.toLowerCase()===id)?.[1]}};
+const gen = {num:3, species:{get:(id:string)=>setup.data.speciesById[id]}, natures:new setup.engine.Natures()};
 const maxHp = new setup.engine.Pokemon(gen, 'Sceptile', {level:100, nature:'Lax', ivs:sceptile.attacker.ivs, evs:sceptile.attacker.evs}).stats.hp as number;
 sceptile.attacker.currentHp=maxHp;
 const full = await adapter.calculate(sceptile);
@@ -31,6 +31,48 @@ if(full.status!=='success' || low.status!=='success') differences.push('Sceptile
 else {
   if(!full.value.attackerDescription.includes('31 SpA IV') || !full.value.attackerDescription.includes('@Miracle Seed') || full.value.attackerDescription.includes('Overgrow')) differences.push('Inactive Overgrow or active Miracle Seed description incorrect');
   if(!low.value.attackerDescription.includes('Overgrow') || !low.value.attackerDescription.includes('@Miracle Seed')) differences.push('Active Overgrow description incorrect');
+}
+// Check positive/negative/neutral effects on both sides for every stat and nature.
+for (const side of ['attacker','defender'] as const) {
+  const input = structuredClone(sceptile);
+  input.attacker.currentHp=maxHp;
+  input.attacker.nature='Hardy'; input.defender.nature='Hardy';
+  const neutral = await adapter.calculate(input);
+  if (neutral.status !== 'success') throw Error('Neutral nature setup failed');
+  for (const [nature, pair] of Object.entries(setup.data.natures)) {
+    const [plus,minus] = pair as string[];
+    input[side].nature=nature;
+    const result=await adapter.calculate(input);
+    if(result.status!=='success') {differences.push(`${side} ${nature}: failed`);continue;}
+    for(const stat of ['hp','atk','def','spa','spd','spe'] as const) {
+      const multiplier=stat==='hp'||plus===minus?1:stat===plus?1.1:stat===minus?0.9:1;
+      if(result.value[`${side}Stats`][stat]!==Math.floor(neutral.value[`${side}Stats`][stat]*multiplier)) differences.push(`${side} ${nature} ${stat}`);
+    }
+  }
+}
+if(full.status==='success' && low.status==='success') {
+  if(full.value.attackerStats.spa!==246 || low.value.attackerStats.spa!==270) differences.push('Sceptile SpA must be Lax 246 / Modest 270');
+  if(!low.value.attackerDescription.includes('+SpA Nature') || full.value.attackerDescription.includes('Nature')) differences.push('Applied nature factor description');
+}
+for(const [side,stat,positive,negative,move] of [
+  ['attacker','atk','Adamant','Modest','Tackle'],
+  ['attacker','spa','Modest','Adamant','Leaf Blade'],
+  ['defender','def','Bold','Lonely','Tackle'],
+  ['defender','spd','Calm','Naughty','Leaf Blade'],
+] as const) {
+  const input=structuredClone(sceptile);
+  input.attacker={...input.attacker,nature:'Hardy',ability:'',item:'',currentHp:maxHp};
+  input.defender={...input.attacker};
+  const m=setup.data.movesById[setup.engine.toID(move)] as {type:string;basePower:number};
+  input.move={name:move,type:m.type,basePower:m.basePower,critical:false,hits:1};
+  const maximum:number[]=[];
+  for(const nature of [negative,'Hardy',positive]) {
+    input[side].nature=nature;
+    const result=await adapter.calculate(input);
+    if(result.status!=='success') throw Error(`${side} ${stat} damage failed`);
+    maximum.push(result.value.rangeHp[1]);
+  }
+  if(side==='attacker' ? !(maximum[0]<maximum[1]&&maximum[1]<maximum[2]) : !(maximum[0]>maximum[1]&&maximum[1]>maximum[2])) differences.push(`${side} ${stat}: nature damage ordering ${maximum}`);
 }
 const broken = await new BattleAdapter('/missing-ek-data').calculate(fixtures.cases[0].inputs as Parameters<BattleAdapter['calculate']>[0]);
 if (broken.status !== 'error') differences.push('Missing data did not return error');

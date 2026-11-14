@@ -8,6 +8,8 @@ import { inputs, manifest, sha256 } from './emerald-kaizo.mjs';
 const root = fileURLToPath(new URL('../../', import.meta.url));
 const cache = path.join(root, '.baseline-cache/emerald-kaizo');
 export const additional = {
+  'calc/index.js': 'cfe5754e5c9c836b4b28df2b9d76417f1b6001875e6f3a3a0257653afa36e14f',
+  'calc/data/index.js': '18f3ff1357e135e877044ae1e2e1758fb9244c2f7a1c1149bbbe916b5b047e15',
   'calc/result.js': 'd963bc0cdc7a3fdebedad48587916d2c9968666b5665daf89d3332c8c551bedd',
   'calc/desc.js': '61fc811cb3f224e1792fefa7667a61aba9ff88d2ea6f33b8748ecbd3b787efaa',
   'calc/items.js': '5e465a9b3c16decf00b404a689510b3ffdaf8864d477061cf6c611f3c811b7d7',
@@ -58,7 +60,8 @@ export async function referenceRuntime(retrieve = false) {
     items: { get: id => data.items[id] },
     abilities: { get: id => data.abilities[id] },
     types: { get: id => ({ effectiveness: data.typeChart[Object.keys(data.typeChart).find(k => toID(k) === id)] }) },
-    natures: { get: id => Object.entries(data.natures).find(([k]) => toID(k) === id)?.[1] },
+    // Use the pinned browser wrapper: captured NATURES values are tuples, not engine records.
+    natures: new (requireModule('calc/data/natures').Natures)(),
   };
   return { data, config, gen, Pokemon: requireModule('calc/pokemon').Pokemon,
     Move: requireModule('calc/move').Move, Field: requireModule('calc/field').Field,

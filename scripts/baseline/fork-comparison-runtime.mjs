@@ -35,7 +35,7 @@ export async function forkRuntime() {
   }
   const sourceFiles = new Map();
   for (const name of ['util', 'stats', 'pokemon', 'move', 'field', 'items', 'result', 'desc', 'calc',
-    'mechanics/util', 'mechanics/gen3']) {
+    'mechanics/util', 'mechanics/gen3', 'data/natures']) {
     sourceFiles.set(`calc/${name}`, await readFile(path.join(root, `calc/${name}.js`), 'utf8'));
   }
   const { toID } = loadSync('calc/util');
@@ -45,7 +45,7 @@ export async function forkRuntime() {
     items: { get: id => data.items[id] },
     abilities: { get: id => data.abilities[id] },
     types: { get: id => ({ effectiveness: data.typeChart[Object.keys(data.typeChart).find(k => toID(k) === id)] }) },
-    natures: { get: id => Object.entries(data.natures).find(([k]) => toID(k) === id)?.[1] },
+    natures: new (loadSync('calc/data/natures').Natures)(),
   };
   return { data, config, gen,
     Pokemon: loadSync('calc/pokemon').Pokemon,
@@ -67,10 +67,11 @@ export function runForkCase(runtime, fixture) {
   const m = new Move(gen, move.name, { isCrit: move.critical,
     overrides: { type: move.type, basePower: move.basePower } });
   const f = new Field(field);
+  const attackerStats = { ...a.stats }, defenderStats = { ...d.stats };
   const result = calculate(gen, a, d, m, f);
   let ko = null, koError = null;
   try { ko = result.kochance(); } catch (error) { koError = error.message; }
   return { rawDamage: result.damage, rangeHp: result.range(),
     ko: ko && { chance: ko.chance ?? null, turns: ko.n ?? null, description: ko.text ?? null },
-    koError, attackerStats: a.stats, defenderStats: d.stats };
+    koError, attackerStats, defenderStats };
 }

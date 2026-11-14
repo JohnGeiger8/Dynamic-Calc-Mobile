@@ -71,3 +71,28 @@ Issues #1–#7 are closed as completed and their listed PRs are merged. This rec
 An authoritative Emerald Kaizo release or patch identifier and independent game calculations would strengthen the baseline. The audit's unresolved type-rounding and Hidden Power questions remain documented in the [baseline record](Emerald-Kaizo-Baseline.md#uncertainty-and-exclusions). The issue #7 review required internal links, clean reproduction commands, the deliberate-mismatch failure, and the PR's CI result.
 
 Local validation on 2026-11-08: `baseline:fixtures:verify` reproduced all 30 pinned cases; `test:baseline` passed six tests; `test:comparison` passed three; and `baseline:compare` reported 30 matches, zero mismatches, and zero stale annotations. A temporary copy of case `EK4-03` with one expected roll changed made `baseline:compare -- --fixtures <temporary-file>` exit 1 and report that case's raw-damage difference. The temporary file was removed, and the committed fixture was not edited. Local Markdown targets in this report and both documentation indexes exist, and `git diff --check` passed. The initial [PR #14 clean-checkout CI run](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/actions/runs/42559715097) passed, including the new `baseline:compare` step.
+
+## Nature adapter correction (issue #32)
+
+The original 2026-11-08 30/30 result above is historical harness parity, **not evidence that natures were applied**. The harnesses returned captured `NATURES` tuples directly, whereas `calc/stats.js` consumes records with `plus` and `minus`. Both tuple properties were undefined, silently producing neutral stats. The mobile adapter inherited this defect. [Issue #32](https://github.com/JohnGeiger8/Dynamic-Calc-Mobile/issues/32) corrects the adapter boundary; it does not change the accepted dataset or engine formula. These revised expected results require maintainer review before merge.
+
+The pinned original fork and Decomps browser pages initialize `calc = exports = {}`, a global `require`, and a copying `__createBinding`, then load `calc/data/natures.js`, `calc/data/index.js`, and `calc/index.js`. Their `js/shared_controls.js` passes the selected nature into `calc.calcStat` and `new calc.Pokemon`. Numeric generations resolve through `Generations.get`, whose `Generation` creates `new Natures()`. That wrapper converts tuples to named records. Neutral natures with identical plus/minus stats cancel, and `Stats.calcStatADV` floors the nature-adjusted stat. Both sources therefore apply natures in the browser stat path, unlike the old fixture adapters.
+
+The [desktop-path check](../../scripts/baseline/check-nature-browser-path.mjs) exercises the isolated global-script initialization and numeric-generation stat API from the original fork Git object and checksum-verified reference scripts. Run `node scripts/baseline/check-nature-browser-path.mjs` after the full fetch sequence in a full clone containing original commit `42b4cdc0f11de43ecabf3a5d2c1aba67e46e2f74`. It is not a full desktop UI or ROM test. Reference `calc/index.js` and `calc/data/index.js` are additionally checksum-pinned in the fixture provenance; all source revisions remain unchanged. Sceptile at level 100, base SpA 105, IV 31 and EV 0 yields Lax/Hardy 246, Modest 270, and Adamant 221 in both paths.
+
+Each fixture runtime now uses its own source's `Natures` wrapper. The mobile generated engine exports the existing fork wrapper for both calculation and HP-construction paths. The capture records this convention explicitly. `node scripts/baseline/capture-reference-fixtures.mjs write` regenerates expectations from the separately pinned reference; it must not be used to accept unexplained drift. The comparison now checks all calculated stats, so unchanged damage cannot conceal a nature regression.
+
+Of the original 30 cases, calculated stats change in all except `EK4-03` and `EK4-15`. Battle inputs, maximum/current HP, move metadata, field settings, dataset/configuration hashes and roll shapes remain unchanged. Six cases change their 16 raw damage rolls and derived percentages:
+
+| Case | Previous HP range | Corrected HP range | KO change |
+| --- | --- | --- | --- |
+| EK4-12 | 17–20 | 20–24 | 4.3% chance to 2HKO → guaranteed 2HKO |
+| EK4-13 | 397–468 | 438–516 | None; guaranteed OHKO |
+| EK4-24 | 418–492 | 462–544 | None; guaranteed OHKO |
+| EK4-25 | 56–67 | 62–74 | guaranteed 4HKO → 24% chance to 3HKO |
+| EK4-26 | 10–12 | 11–13 | None; empty KO description |
+| EK4-28 | 336–396 | 368–434 | None; guaranteed OHKO |
+
+`EK4-12` uses Lonely Barboach (Atk 22→24); the other five use Modest Ampharos (SpA 190→209). Exact old/new rolls and calculated stats remain reviewable in the fixture Git diff. Double Kick retains two 16-roll arrays; immunities and Pain Split retain zero damage. The two changed KO probabilities are exactly 0.04296875→1 and 1→0.240234375 respectively. No discrepancy is hidden in the ledger.
+
+Regression coverage includes all 25 captured natures on all six stats in both runtimes and on both mobile combatants, positive/negative/neutral Atk/SpA/Def/SpD damage effects, the Sceptile reproduction, and rendered nature factors across attack directions. The nature warning is removed because the modifier is now applied; the factor label continues to come from the engine's description rather than merely the selected nature. Physical iPhone, software keyboard and VoiceOver evidence remains tracked in #22; species ability provenance remains #30. Reference parity still does not establish ROM accuracy.

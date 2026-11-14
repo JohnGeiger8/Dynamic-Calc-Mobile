@@ -48,6 +48,19 @@ try {
   render({your:attacker,opponent:defender}); await wait(()=>text().includes(f.expected.rangePercent.join('–')+'%'));
   const full=text(); render({your:attacker,opponent:{...defender,currentHp:1}}); await wait(()=>text().includes(f.expected.rangePercent.join('–')+'%'));
   check(text().includes('guaranteed OHKO')&&full.includes(f.expected.ko!.description!)&&!full.includes('guaranteed OHKO'),'Current HP KO description');
+  // Nature factors follow actual calculations, and remain correct after direction changes.
+  const sceptile={...a,species:'Sceptile',level:100,nature:'Hardy',ability:'',item:'',currentHp:281,moves:['Leaf Blade','','','']};
+  const target={...d,species:'Sceptile',level:100,nature:'Hardy',ability:'',item:'',currentHp:281,moves:['Leaf Blade','','','']};
+  for(const [nature,sign] of [['Modest','+'],['Adamant','-'],['Hardy','']] as const) {
+    render({your:{...sceptile,nature},opponent:target}); click('Your attacks');
+    await wait(()=>document.querySelectorAll('.result-row').length===4);
+    const detail=document.querySelector('details')!; detail.open=true;
+    check(sign?detail.textContent!.includes(`${sign}SpA Nature`):!detail.textContent!.includes('SpA Nature'),`${nature}: displayed nature factor`);
+    check(!text().includes('not currently applied'),'Obsolete nature warning');
+    click('Opponent attacks');
+    check(!document.querySelector('details')!.textContent!.includes('SpA Nature'),'Attacker nature leaked to reverse direction');
+  }
+  click('Your attacks');
   // A deliberately non-cooperative adapter resolves old requests after newer ones.
   const pending:{input:BattleInput;resolve:(o:Outcome)=>void}[]=[];
   const delayed={calculate:(input:BattleInput)=>new Promise<Outcome>(resolve=>pending.push({input,resolve})),invalidate:()=>{}};
