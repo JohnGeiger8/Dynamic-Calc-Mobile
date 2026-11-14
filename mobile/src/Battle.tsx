@@ -14,7 +14,7 @@ const validNumber = (n:number, min:number, max:number) => Number.isInteger(n) &&
 
 function maximumHp(p:Combatant, {data,engine}:Runtime): number {
   if (!p.species || !data.speciesById[toID(p.species)] || !validNumber(p.level,1,100) || keys.some(k=>!validNumber(p.ivs[k],0,31)||!validNumber(p.evs[k],0,255))) return 0;
-  const gen = {num:3, species:{get:(id:string)=>data.speciesById[id]}, natures:{get:(id:string)=>Object.entries(data.natures).find(([name])=>toID(name)===id)?.[1]}};
+  const gen = {num:3, species:{get:(id:string)=>data.speciesById[id]}, natures:new engine.Natures()};
   return new engine.Pokemon(gen, p.species, {level:p.level, nature:p.nature, ivs:p.ivs, evs:p.evs}).stats.hp as number;
 }
 

@@ -1,4 +1,5 @@
 declare module '*generated/engine.js' {
+  export const Natures: any;
   export const Pokemon: any;
   export const Move: any;
   export const Field: any;

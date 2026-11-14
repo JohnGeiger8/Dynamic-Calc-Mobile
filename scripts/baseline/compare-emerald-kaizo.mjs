@@ -20,6 +20,9 @@ export function differences(fixture, actual) {
   function compare(key, before, after) {
     if (JSON.stringify(before) !== JSON.stringify(after)) result.push({ key, expected: before, actual: after });
   }
+  for (const side of ['attacker', 'defender']) for (const stat of ['hp', 'atk', 'def', 'spa', 'spd', 'spe']) {
+    compare(`${side}Stats.${stat}`, fixture.inputs[side].calculatedStats[stat], actual[`${side}Stats`][stat]);
+  }
   compare('rawDamage', expected.rawDamage, actual.rawDamage);
   compare('rangeHp', expected.rangeHp, actual.rangeHp);
   const percent = actual.rangeHp.map(hp => Math.round(1000 * hp / fixture.inputs.defender.calculatedStats.hp) / 10);

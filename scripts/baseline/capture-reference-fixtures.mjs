@@ -87,7 +87,7 @@ export async function captureFixtures(retrieve = false) {
       snapshot: 'backups/ek2.js', snapshotSha256: manifest.files.find(f => f.path === 'backups/ek2.js').sha256,
       dataSha256: manifest.outputs['data.json'], configurationSha256: sha256(configBytes),
       extraSourceSha256: additional, licenses: ['reference/calc/LICENSE', 'trainerSource/LICENSE'] },
-    conventions: { mechanicsGeneration: 3, dataGeneration: 8, movePickerGeneration: 9,
+    conventions: { natureRepresentation: 'calc/data/natures.js Natures wrapper (plus/minus); corrected in issue #32', mechanicsGeneration: 3, dataGeneration: 8, movePickerGeneration: 9,
       damageUnit: 'HP, integer; roll order is reference random factor 85 through 100',
       percentDenominator: 'defender calculated maximum HP', percentRounding: 'one decimal, nearest',
       status: 'empty string means healthy', koText: 'exact pinned-reference Result.kochance().text; chance is a fraction' },

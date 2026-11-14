@@ -52,3 +52,28 @@ test('a deliberately changed expected roll fails with its case ID, then the orig
     assert.ok(restored.results.find(item => item.id === 'EK4-03').differences.length === 0);
   } finally { await rm(temporary, { recursive: true, force: true }); }
 });
+
+test('both runtimes apply all captured natures, including neutral cancellation and Sceptile', async () => {
+  const { referenceRuntime } = await import('./reference-fixture-runtime.mjs');
+  const { forkRuntime } = await import('./fork-comparison-runtime.mjs');
+  for (const runtime of [await referenceRuntime(), await forkRuntime()]) {
+    const { data, gen, Pokemon } = runtime;
+    const ivs = Object.fromEntries(['hp','atk','def','spa','spd','spe'].map(k => [k,31]));
+    const evs = Object.fromEntries(Object.keys(ivs).map(k => [k,0]));
+    const neutral = new Pokemon(gen, 'Sceptile', {level:100, nature:'Hardy', ivs, evs});
+    assert.equal(neutral.stats.spa, 246);
+    for (const [nature, [plus, minus]] of Object.entries(data.natures)) {
+      const record = gen.natures.get(nature.toLowerCase());
+      assert.equal(record.plus, plus); assert.equal(record.minus, minus);
+      const p = new Pokemon(gen, 'Sceptile', {level:100, nature, ivs, evs});
+      for (const stat of Object.keys(ivs)) {
+        const multiplier = stat === 'hp' || plus === minus ? 1 : stat === plus ? 1.1 : stat === minus ? 0.9 : 1;
+        assert.equal(p.stats[stat], Math.floor(neutral.stats[stat] * multiplier), `${nature} ${stat}`);
+      }
+    }
+    // Reproduce the old harness defect independently of the corrected wrapper.
+    const legacyGen = {...gen, natures:{get:id=>Object.entries(data.natures).find(([name])=>name.toLowerCase()===id)?.[1]}};
+    assert.equal(new Pokemon(legacyGen, 'Sceptile', {level:100,nature:'Modest',ivs,evs}).stats.spa,246);
+    assert.equal(new Pokemon(gen, 'Sceptile', {level:100,nature:'Modest',ivs,evs}).stats.spa,270);
+  }
+});
